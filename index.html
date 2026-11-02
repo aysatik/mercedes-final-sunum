@@ -1,0 +1,1089 @@
+<!doctype html>
+<html lang="tr" data-ui="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ayşegül Atik — Platform ve Ar-Ge</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;700&family=Martian+Mono:wdth,wght@75..112.5,100..800&family=IBM+Plex+Mono:wght@400;700&family=Atkinson+Hyperlegible:wght@400;700&family=Lexend:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme: light;
+  --fg:#000; --bg:#fff; --mute:#5a5a5a;
+  --font:"Martian Mono","IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  --hs:1; --bs:1; --lh:1.65; --ls:0em; --ws:0em;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  background:var(--bg); color:var(--fg);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){ color-scheme:dark; --fg:#f2f2f2; --bg:#000; --mute:#a3a3a3; }
+}
+:root[data-theme="dark"]{ color-scheme:dark; --fg:#f2f2f2; --bg:#000; --mute:#a3a3a3; }
+:root[data-theme="light"]{ color-scheme:light; --fg:#000; --bg:#fff; --mute:#5a5a5a; }
+:root[data-theme="yellow"]{ color-scheme:dark; --fg:#ffe500; --bg:#000; --mute:#ffe500; }
+:root[data-theme="soft"]{ color-scheme:light; --fg:#262626; --bg:#e6e6e3; --mute:#555; }
+:root[data-theme="custom"]{ --mute:var(--fg); }
+html{ scroll-padding-top:env(safe-area-inset-top,0px); }
+*,*::before,*::after{ box-sizing:border-box; }
+html,body{ height:100%; margin:0; }
+body{
+  background:var(--bg); color:var(--fg);
+  font-family:var(--font); font-stretch:87.5%; font-weight:300;
+  font-size:calc(.92rem * var(--bs)); line-height:var(--lh);
+  letter-spacing:var(--ls); word-spacing:var(--ws);
+  display:grid; grid-template-columns:minmax(15rem,19rem) 1fr; overflow:hidden;
+}
+html[data-ui="tr"] body [lang="en"], html[data-ui="en"] body [lang="tr"]{ display:none !important; }
+b, strong{ font-weight:500; }
+
+a{ color:inherit; text-decoration-thickness:1px; text-underline-offset:.22em; }
+a:hover{ text-decoration-thickness:2px; }
+:focus-visible{ outline:2px solid var(--fg); outline-offset:3px; }
+:root[data-focus] :focus-visible{ outline:5px solid var(--fg); outline-offset:4px; box-shadow:0 0 0 10px var(--bg); }
+:root[data-links] main a, :root[data-links] .side a{ background:var(--fg); color:var(--bg); text-decoration:underline; padding:0 .2em; }
+:root[data-align] main *{ text-align:left !important; }
+:root[data-cursor], :root[data-cursor] *{ cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='44' viewBox='0 0 44 44'%3E%3Cpath d='M4 3 L4 37 L13 28 L19 41 L25 38 L19 26 L32 26 Z' fill='black' stroke='white' stroke-width='3' stroke-linejoin='round'/%3E%3C/svg%3E") 4 3, auto !important; }
+
+.skip{ position:absolute; left:1rem; top:-10rem; background:var(--bg); color:var(--fg); border:1px solid var(--fg); padding:.5rem .9rem; z-index:100; }
+.skip:focus{ top:calc(env(safe-area-inset-top,0px) + 1rem); }
+
+/* left panel */
+.side{
+  border-right:1px solid var(--fg); overflow-y:auto;
+  padding:2rem 1.5rem; display:flex; flex-direction:column; gap:2rem; background:var(--bg);
+}
+.name{ font-size:calc(1.05rem * var(--hs)); font-weight:400; font-stretch:100%; line-height:1.3; margin:0; }
+.role{ margin:.3rem 0 0; color:var(--mute); }
+.prog{ margin:0; padding-top:1rem; border-top:1px solid var(--fg); }
+.prog dt{ color:var(--mute); margin-top:.7rem; }
+.prog dt:first-child{ margin-top:0; }
+.prog dd{ margin:0; }
+.side nav ul{ list-style:none; padding:0; margin:0; }
+.side nav a{ display:block; padding:.22rem 0; text-decoration:none; color:var(--mute); }
+.side nav a:hover{ color:var(--fg); text-decoration:underline; }
+.side nav a[aria-current="true"]{ color:var(--fg); text-decoration:underline; }
+.where{ margin:0; color:var(--mute); }
+.langs{ display:flex; gap:.5rem; }
+.side-foot{ margin-top:auto; color:var(--mute); font-size:.85em; }
+
+button, select, input{ font:inherit; letter-spacing:inherit; color:inherit; }
+button{ background:var(--bg); color:var(--fg); border:1px solid var(--fg); padding:.35rem .7rem; font-weight:300; cursor:pointer; }
+button:hover{ text-decoration:underline; }
+button[aria-pressed="true"]{ text-decoration:underline; text-decoration-thickness:2px; font-weight:500; }
+button[aria-pressed="false"]{ border-color:var(--mute); color:var(--mute); }
+
+/* main */
+main{ overflow-y:auto; height:100%; scroll-snap-type:y mandatory; scroll-behavior:smooth; }
+:root[data-nosnap] main{ scroll-snap-type:none; }
+:root[data-motion] main{ scroll-behavior:auto; }
+:root[data-motion] *{ transition:none !important; animation:none !important; }
+@media (prefers-reduced-motion: reduce){ main{ scroll-behavior:auto; } *{ transition:none !important; } }
+.page{
+  min-height:100%; scroll-snap-align:start;
+  padding:clamp(2rem,6vw,6rem) clamp(4rem,8vw,8rem) clamp(2rem,6vw,6rem) clamp(1.5rem,6vw,6rem);
+  border-bottom:1px solid var(--fg);
+  display:flex; flex-direction:column; justify-content:center; gap:2rem;
+}
+.page:last-child{ border-bottom:0; }
+h1,h2{ font-weight:400; font-stretch:100%; line-height:1.2; letter-spacing:-.01em; margin:0; overflow-wrap:anywhere; hyphens:auto; }
+h1{ font-size:calc(clamp(1.45rem,2.6vw,2.2rem) * var(--hs)); max-width:28ch; }
+h2{ font-size:calc(clamp(1.25rem,2vw,1.75rem) * var(--hs)); }
+h3{ font-size:calc(1rem * var(--hs)); font-weight:500; margin:0 0 .5rem; line-height:1.35; }
+p{ margin:0 0 .8rem; max-width:62ch; }
+.lede{ max-width:56ch; }
+.mute{ color:var(--mute); }
+ul.plain{ margin:0; padding-left:1.1em; max-width:62ch; }
+ul.plain li{ margin-bottom:.3rem; }
+
+/* columns */
+.cols{ display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,17rem),1fr)); gap:1.5rem 2.5rem; }
+.cols > *{ border-top:1px solid var(--fg); padding-top:.8rem; }
+.cols p:last-child, .cols ul:last-child{ margin-bottom:0; }
+
+/* tables */
+.scroll-x{ overflow-x:auto; max-width:100%; }
+table{ border-collapse:collapse; width:100%; min-width:34rem; max-width:62rem; }
+th,td{ text-align:left; vertical-align:top; padding:.55rem 1.2rem .55rem 0; border-top:1px solid var(--fg); font-weight:300; }
+thead th{ border-top:0; color:var(--mute); }
+td:first-child{ min-width:9rem; }
+#riskler td:first-child{ width:13rem; }
+
+/* labs */
+.lab{ display:grid; grid-template-columns:minmax(11rem,1fr) 2.6fr; gap:.4rem 2.5rem; border-top:1px solid var(--fg); padding:1rem 0; max-width:66rem; }
+.lab h3{ margin:0; }
+.lab .who{ color:var(--mute); margin:0; }
+.lab .link-line{ color:var(--mute); }
+@media (max-width:1100px){ .lab{ grid-template-columns:1fr; } }
+
+/* months */
+.months{ list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,14rem),1fr)); gap:1.5rem 2.5rem; }
+.months li{ border-top:1px solid var(--fg); padding-top:.8rem; }
+.months b{ display:block; font-weight:500; margin-bottom:.3rem; }
+
+.quote{ font-size:calc(1.15rem * var(--hs)); line-height:1.4; margin:0; max-width:40ch; }
+dl.facts{ display:grid; grid-template-columns:max-content 1fr; gap:.6rem 2rem; margin:0; max-width:60rem; }
+dl.facts dt{ color:var(--mute); }
+dl.facts dd{ margin:0; }
+@media (max-width:640px){ dl.facts{ grid-template-columns:1fr; gap:.1rem; } dl.facts dd{ margin-bottom:.7rem; } }
+.empty{ border:1px dashed var(--mute); padding:1rem; max-width:60rem; }
+.empty h3{ font-weight:400; }
+
+/* customisation panel */
+.panel-tab{
+  position:fixed; right:0; top:50%; transform:translateY(-50%); z-index:31;
+  writing-mode:vertical-rl; background:var(--bg); color:var(--fg); border:1px solid var(--fg); border-right:0; padding:.9rem .45rem;
+}
+.panel{
+  position:fixed; top:0; right:0; height:100%; width:min(24rem,100vw); z-index:40;
+  background:var(--bg); color:var(--fg); border-left:1px solid var(--fg);
+  overflow-y:auto; padding:calc(env(safe-area-inset-top,0px) + 1.25rem) 1.25rem calc(env(safe-area-inset-bottom,0px) + 1.5rem);
+  transform:translateX(100%); visibility:hidden; transition:transform .25s ease, visibility 0s linear .25s;
+  font-size:max(.85rem, calc(.88rem * var(--bs)));
+}
+.panel.open{ transform:none; visibility:visible; transition:transform .25s ease; }
+.panel-head{ display:flex; justify-content:space-between; align-items:center; gap:1rem; margin-bottom:.8rem; }
+.panel-head h2{ font-size:1.1rem; }
+.panel fieldset{ border:0; border-top:1px solid var(--fg); margin:0; padding:.8rem 0 1rem; }
+.panel legend{ font-weight:500; padding:0 .4rem 0 0; }
+.row{ display:grid; grid-template-columns:1fr auto; align-items:center; gap:.2rem .6rem; margin:.45rem 0; }
+.row output{ color:var(--mute); }
+.row input[type="range"]{ grid-column:1 / -1; width:100%; accent-color:var(--fg); }
+.check{ display:flex; gap:.6rem; align-items:flex-start; margin:.45rem 0; }
+.check input, .radio input{ width:1.1rem; height:1.1rem; margin:.2rem 0 0; accent-color:var(--fg); flex:none; }
+.radio{ display:flex; gap:.6rem; align-items:flex-start; margin:.3rem 0; }
+.panel select{ width:100%; padding:.4rem; border:1px solid var(--fg); background:var(--bg); }
+.colors{ display:flex; gap:1rem; margin-top:.5rem; }
+.colors label{ display:flex; flex-direction:column; gap:.2rem; }
+.colors input{ width:4rem; height:2.2rem; border:1px solid var(--fg); background:var(--bg); padding:0; }
+.hint{ color:var(--mute); font-size:.92em; margin:.3rem 0 0; }
+.btns{ display:flex; flex-wrap:wrap; gap:.5rem; }
+
+/* reading guide */
+.guide{ position:fixed; left:0; right:0; height:calc(2.2em * var(--lh)); pointer-events:none; z-index:20; display:none;
+  border-top:1px solid var(--fg); border-bottom:1px solid var(--fg); box-shadow:0 0 0 100vmax rgba(0,0,0,.35); top:40%; }
+:root[data-guide] .guide{ display:block; }
+
+/* colour-vision simulation */
+:root[data-cvd="protan"] main, :root[data-cvd="protan"] .side{ filter:url(#cvd-protan); }
+:root[data-cvd="deutan"] main, :root[data-cvd="deutan"] .side{ filter:url(#cvd-deutan); }
+:root[data-cvd="tritan"] main, :root[data-cvd="tritan"] .side{ filter:url(#cvd-tritan); }
+:root[data-cvd="achro"] main, :root[data-cvd="achro"] .side{ filter:url(#cvd-achro); }
+
+/* mobile */
+.mbar{ display:none; }
+@media (max-width:900px){
+  body{ grid-template-columns:1fr; grid-template-rows:auto 1fr; }
+  .mbar{ display:flex; justify-content:space-between; align-items:center; gap:1rem; padding:.7rem 1rem; border-bottom:1px solid var(--fg); background:var(--bg); }
+  .side{ position:fixed; top:0; left:0; height:100%; width:min(21rem,90vw); z-index:45; transform:translateX(-100%); visibility:hidden;
+    transition:transform .25s ease, visibility 0s linear .25s; padding-top:calc(env(safe-area-inset-top,0px) + 1.25rem); padding-bottom:calc(env(safe-area-inset-bottom,0px) + 1.25rem); }
+  .side.open{ transform:none; visibility:visible; transition:transform .25s ease; }
+  .side .close-side{ display:block; }
+  .page{ padding:2rem 1.2rem 5rem; }
+  .panel-tab{ writing-mode:horizontal-tb; top:auto; transform:none; bottom:calc(env(safe-area-inset-bottom,0px) + 1rem); right:1rem; padding:.5rem .8rem; border:1px solid var(--fg); }
+}
+.close-side{ display:none; align-self:flex-end; }
+.figs{ display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,18rem),1fr)); gap:2.5rem 3rem; max-width:52rem; }
+figure{ margin:0; }
+figure.wide{ max-width:62rem; }
+figcaption{ margin-top:.7rem; color:var(--mute); max-width:62ch; }
+figcaption b{ color:var(--fg); }
+svg.diagram{ display:block; width:100%; height:auto; color:var(--fg); font-family:var(--font); }
+svg.diagram text{ fill:currentColor; }
+svg.diagram text.m{ fill:var(--mute); }
+.figs svg.diagram{ max-width:24rem; }
+figure.wide .scroll-x svg.diagram{ min-width:40rem; }
+.ref-card{ aspect-ratio:1; max-width:24rem; border:1px solid var(--fg); display:flex; flex-direction:column; justify-content:center; padding:1.5rem; }
+.ref-card p{ margin:0; }
+.ref-title{ font-size:1.2em; font-weight:500; }
+.swot{ display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,20rem),1fr)); border-top:1px solid var(--fg); border-left:1px solid var(--fg); max-width:62rem; }
+.swot > div{ border-right:1px solid var(--fg); border-bottom:1px solid var(--fg); padding:1rem 1.2rem; }
+.sw-k{ font-size:2rem; font-weight:300; line-height:1; margin:0 0 .4rem; color:var(--mute); }
+.bmc{ display:grid; min-width:52rem; max-width:72rem; grid-template-columns:repeat(10,1fr); grid-template-areas:"kp kp ka ka vp vp cr cr cs cs" "kp kp kr kr vp vp ch ch cs cs" "co co co co co rs rs rs rs rs"; border-top:1px solid var(--fg); border-left:1px solid var(--fg); font-size:.9em; }
+.bmc > div{ border-right:1px solid var(--fg); border-bottom:1px solid var(--fg); padding:.8rem; }
+.bmc h3{ font-size:.95em; }
+.bmc ul.plain{ padding-left:1em; }
+.b-kp{grid-area:kp} .b-ka{grid-area:ka} .b-kr{grid-area:kr} .b-vp{grid-area:vp} .b-cr{grid-area:cr} .b-ch{grid-area:ch} .b-cs{grid-area:cs} .b-co{grid-area:co} .b-rs{grid-area:rs}
+.b-vp{ border-width:0 2px 1px 0 !important; }
+.side nav .grp > button{ display:flex; gap:.6rem; width:100%; text-align:left; border:0; border-top:1px solid var(--fg); padding:.5rem 0 .3rem; margin-top:.4rem; background:none; color:var(--fg); font-weight:500; text-decoration:none; }
+.side nav .grp > ul{ display:none; list-style:none; padding:0 0 .3rem 1.4rem; margin:0; }
+.side nav .grp.open > ul{ display:block; }
+.grp-n{ color:var(--mute); }
+.map{ list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,14rem),1fr)); gap:0; max-width:60rem; counter-reset:none; }
+.map li{ position:relative; display:flex; }
+.map li + li::before{ content:"→"; position:absolute; left:-.6em; top:50%; transform:translate(-50%,-50%); background:var(--bg); padding:0 .2em; font-size:1.3rem; z-index:1; }
+.map a{ flex:1; display:flex; flex-direction:column; gap:.4rem; border:1px solid var(--fg); margin-right:1.6rem; padding:1.2rem; min-height:11rem; text-decoration:none; }
+.map a:hover, .map a:focus-visible{ background:var(--fg); color:var(--bg); }
+.map a:hover .map-n, .map a:focus-visible .map-n{ color:var(--bg); }
+.map-n{ font-size:2.4rem; font-weight:300; line-height:1; color:var(--mute); }
+.map b{ font-weight:500; font-size:1.15em; }
+@media (max-width:700px){ .map li + li::before{ content:"↓"; left:50%; top:-.1rem; } .map a{ margin:0 0 1.6rem; } }
+.qa{ border:1px solid var(--fg); padding:1rem 1.2rem; max-width:62rem; }
+.qa p:last-child{ margin-bottom:0; }
+.stats{ display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,15rem),1fr)); gap:0; border-top:1px solid var(--fg); border-left:1px solid var(--fg); max-width:66rem; }
+.stat{ border-right:1px solid var(--fg); border-bottom:1px solid var(--fg); padding:1rem 1.1rem; }
+.stat p{ margin:0 0 .4rem; }
+.stat-n{ font-size:calc(1.9rem * var(--hs)); font-weight:300; line-height:1.1; letter-spacing:-.01em; margin:0 0 .4rem; }
+.src{ color:var(--mute); font-size:.85em; }
+.counter{ border:1px solid var(--fg); padding:1rem 1.2rem; max-width:40rem; }
+.counter p{ margin:0 0 .3rem; }
+.counter-n{ font-size:calc(2.6rem * var(--hs)); font-weight:300; line-height:1.1; font-variant-numeric:tabular-nums; }
+.timeline{ list-style:none; margin:0; padding:0; max-width:62rem; border-left:1px solid var(--fg); }
+.timeline li{ display:grid; grid-template-columns:9rem 1fr; gap:1rem; padding:.5rem 0 .5rem 1rem; position:relative; }
+.timeline li::before{ content:""; position:absolute; left:-5px; top:.95rem; width:9px; height:9px; background:var(--fg); border-radius:50%; }
+.timeline b{ font-weight:500; }
+@media (max-width:640px){ .timeline li{ grid-template-columns:1fr; gap:.1rem; } }
+.calc{ border:1px solid var(--fg); padding:1rem 1.2rem; max-width:66rem; }
+.calc-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,18rem),1fr)); gap:1rem 2.5rem; }
+.calc .row input[type="range"]{ accent-color:var(--fg); width:100%; grid-column:1 / -1; }
+.calc .row output{ color:var(--fg); font-weight:500; }
+.calc-out p{ margin:0; }
+.calc-out .stat-n{ margin-bottom:.8rem; font-variant-numeric:tabular-nums; }
+.eiffel{ display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,18rem),1fr)); gap:1.5rem 3rem; max-width:66rem; }
+.eiffel p{ margin:0 0 .4rem; }
+.towers{ display:flex; align-items:flex-end; gap:.4rem; margin:.6rem 0 .3rem; color:var(--fg); }
+.tower{ width:2.2rem; height:4.4rem; }
+.tower-part{ display:inline-block; width:calc(2.2rem * .9); overflow:hidden; opacity:.55; }
+.numstrip{ display:grid; grid-template-columns:repeat(auto-fit,minmax(7rem,1fr)); gap:1rem; max-width:62rem; border-top:1px solid var(--fg); padding-top:1rem; }
+.numstrip p{ margin:0; }
+.bars{ max-width:62rem; }
+.bar-row{ display:grid; grid-template-columns:minmax(10rem,22rem) 1fr 6rem; gap:1rem; align-items:center; padding:.35rem 0; border-top:1px solid var(--fg); }
+.bar-t{ height:.9rem; position:relative; }
+.bar-f{ position:absolute; inset:0 auto 0 0; background:var(--fg); }
+.bar-v{ text-align:right; font-variant-numeric:tabular-nums; }
+.bar-total{ font-weight:500; border-top-width:2px; }
+@media (max-width:640px){ .bar-row{ grid-template-columns:1fr 5rem; } .bar-t{ grid-column:1 / -1; order:3; } }
+.gantt{ min-width:40rem; max-width:62rem; }
+.g-row{ display:grid; grid-template-columns:minmax(12rem,1.6fr) repeat(6,1fr); border-top:1px solid var(--fg); }
+.g-row > span{ padding:.4rem .5rem; }
+.g-head > span{ color:var(--mute); font-size:.9em; }
+.g-c{ border-left:1px dotted var(--mute); position:relative; }
+.g-c.on::after{ content:""; position:absolute; left:0; right:0; top:50%; height:.6rem; transform:translateY(-50%); background:var(--fg); }
+.g-row{ align-items:center; }
+/* ===== Design language v3 (after Portfolio Academy Session #1) ===== */
+:root{ --fg:#111827; --bg:#F9FAFB; --mute:#3f3f46; --line:#d4d4d8; --panel:#f1f1f3;
+  --font:"Plus Jakarta Sans","Helvetica Neue",Arial,sans-serif; --font-h:"Playfair Display",Georgia,serif; --font-m:"JetBrains Mono",ui-monospace,Menlo,monospace; --lh:1.7; }
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){ --fg:#fafafa; --bg:#09090b; --mute:#d4d4d8; --line:#3f3f46; --panel:#18181b; } }
+:root[data-theme="dark"]{ --fg:#fafafa; --bg:#09090b; --mute:#d4d4d8; --line:#3f3f46; --panel:#18181b; }
+:root[data-theme="light"]{ --fg:#111827; --bg:#F9FAFB; --mute:#3f3f46; --line:#d4d4d8; --panel:#f1f1f3; }
+:root[data-theme="yellow"]{ --line:#ffe500; --panel:#000; }
+:root[data-theme="soft"]{ --line:#bdbdb8; --panel:#dcdcd8; }
+:root[data-theme="custom"]{ --line:var(--fg); --panel:transparent; }
+body{ font-stretch:100%; font-weight:400; font-size:calc(1.0625rem * var(--bs)); -webkit-font-smoothing:antialiased; }
+::selection{ background:var(--fg); color:var(--bg); }
+h1,h2{ font-family:var(--font-h); font-weight:700; letter-spacing:-.015em; line-height:1.12; }
+h1{ font-size:calc(clamp(2.2rem,4.6vw,3.6rem) * var(--hs)); max-width:22ch; }
+h2{ font-size:calc(clamp(1.9rem,3.6vw,2.9rem) * var(--hs)); max-width:26ch; }
+h3{ font-weight:700; font-size:calc(1.02rem * var(--hs)); }
+.lede{ font-size:1.12em; line-height:1.65; }
+.kicker, .side nav, .where, .prog dt, .src, .hint, thead th, .g-head, .row output, .sw-k, .map-n, .grp-n, figcaption .mute, .panel legend, .side-foot, .role, .numstrip .mute{ font-family:var(--font-m); }
+.kicker{ font-size:.75rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--mute); margin:0 0 -.6rem; }
+.page{ max-width:none; padding-left:clamp(1.5rem,6vw,6rem); padding-right:clamp(4rem,8vw,8rem); border-bottom:1px solid var(--line); gap:1.8rem; }
+.page > *{ max-width:58rem; }
+.page > .scroll-x, .page > figure.wide, .page > .stats, .page > .calc, .page > .eiffel{ max-width:62rem; }
+.mute, .src, figcaption{ color:var(--mute); }
+.side{ border-right:1px solid var(--line); }
+.name{ font-family:var(--font-m); font-weight:700; letter-spacing:-.01em; }
+.prog{ border-top:1px solid var(--line); }
+.prog dt{ font-size:.72rem; text-transform:uppercase; letter-spacing:.06em; }
+.side nav{ font-size:.82rem; }
+.side nav a{ padding:.28rem 0; }
+.side nav .grp > button{ border-top:1px solid var(--line); font-family:var(--font-m); text-transform:uppercase; letter-spacing:.06em; font-size:.78rem; font-weight:700; }
+.where{ font-size:.75rem; }
+button{ border:2px solid var(--fg); border-radius:8px; font-weight:600; }
+button[aria-pressed="false"]{ border-color:var(--line); }
+.cols > *{ border-top:1px solid var(--line); }
+th,td{ border-top:1px solid var(--line); }
+thead th{ font-size:.75rem; text-transform:uppercase; letter-spacing:.06em; }
+.lab{ border-top:1px solid var(--line); }
+.months li{ border-top:1px solid var(--line); }
+.swot, .bmc, .stats{ border-color:var(--line); border-radius:12px; overflow:hidden; }
+.swot > div, .bmc > div, .stat{ border-color:var(--line); }
+.timeline{ border-left-color:var(--line); }
+.numstrip, .bar-row, .g-row{ border-top-color:var(--line); }
+.bar-total{ border-top:2px solid var(--fg); }
+.g-c{ border-left-color:var(--line); }
+.qa, .calc, .counter, .empty{ background:var(--panel); border:0; border-left:4px solid var(--fg); border-radius:0 12px 12px 0; padding:1.2rem 1.4rem; }
+.ref-card{ border:1px solid var(--line); border-radius:12px; background:var(--panel); }
+.map a{ border:2px solid var(--fg); border-radius:12px; }
+.stat-n, .counter-n{ font-family:var(--font-h); font-weight:700; }
+.quote{ font-family:var(--font-h); font-style:italic; font-size:calc(1.35rem * var(--hs)); line-height:1.45; }
+.panel{ border-left:1px solid var(--line); }
+.panel fieldset{ border-top:1px solid var(--line); }
+.panel select, .colors input{ border:2px solid var(--fg); border-radius:8px; }
+.panel-tab{ border-radius:10px 0 0 10px; border:2px solid var(--fg); border-right:0; font-family:var(--font-m); font-weight:700; font-size:.8rem; letter-spacing:.06em; text-transform:uppercase; }
+.mbar{ border-bottom:1px solid var(--line); }
+svg.diagram{ font-family:var(--font-m); }
+.progress{ position:fixed; left:0; right:0; bottom:0; height:4px; z-index:35; pointer-events:none; }
+.progress span{ display:block; height:100%; width:0; background:linear-gradient(90deg,#FF3366,#FF9933,#33CC99,#3399FF,#9933FF,#FF3366); background-size:200% auto; animation:moveGradient 4s linear infinite; transition:width .2s ease; }
+@keyframes moveGradient{ 0%{ background-position:0% 50%; } 100%{ background-position:200% 50%; } }
+.side nav .grp > button{ border-radius:0; }
+.role{ font-size:.8rem; }
+dl.facts dt{ font-family:var(--font-m); font-size:.75rem; text-transform:uppercase; letter-spacing:.06em; padding-top:.3em; }
+.panel-tab{ background:var(--bg); }
+@media (max-width:900px){ .panel-tab{ border-radius:10px; border-right:2px solid var(--fg); } .page{ padding-right:1.2rem; } }
+.pair2{ display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,18rem),1fr)); gap:1.2rem 2.5rem; max-width:58rem; }
+.pair2 > div{ border-top:1px solid var(--line); padding-top:.8rem; }
+.pairs{ max-width:62rem; display:flex; flex-direction:column; gap:0; border-top:1px solid var(--line); }
+.pr{ display:grid; grid-template-columns:2.5rem 1fr 1fr; gap:1.5rem; padding:1rem 0; border-bottom:1px solid var(--line); align-items:start; }
+.pr-n{ font-family:var(--font-h); font-size:2rem; font-weight:700; line-height:1; color:var(--mute); }
+.pr p{ margin:0 0 .35rem; }
+.pr .stat-n{ font-size:calc(1.5rem * var(--hs)); }
+.pr-s{ background:var(--panel); border-left:4px solid var(--fg); border-radius:0 12px 12px 0; padding:.8rem 1rem; }
+.mini{ font-family:var(--font-m); font-size:.72rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--mute); }
+@media (max-width:760px){ .pr{ grid-template-columns:1fr; gap:.6rem; } }
+.plan8{ display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,13rem),1fr)); gap:.8rem; max-width:66rem; }
+.plan8 > div{ background:var(--panel); border-radius:12px; padding:1rem 1.1rem; }
+.plan8 p{ margin:0; font-size:.95em; }
+.flow{ list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,10rem),1fr)); gap:0; max-width:62rem; }
+.flow li{ position:relative; border:2px solid var(--fg); border-radius:10px; margin-right:1.4rem; padding:.7rem .8rem; display:flex; flex-direction:column; gap:.2rem; }
+.flow li:not(:last-child)::after{ content:"→"; position:absolute; right:-1.3rem; top:50%; transform:translateY(-50%); }
+.flow b{ font-family:var(--font-m); font-size:.75rem; text-transform:uppercase; letter-spacing:.06em; }
+.flow span{ font-size:.9em; }
+@media (max-width:700px){ .flow li{ margin:0 0 1.2rem; } .flow li:not(:last-child)::after{ content:"↓"; right:auto; left:50%; top:auto; bottom:-1.2rem; transform:none; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#main"><span lang="tr">İçeriğe geç</span><span lang="en">Skip to content</span></a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <filter id="cvd-protan"><feColorMatrix type="matrix" values="0.567 0.433 0 0 0  0.558 0.442 0 0 0  0 0.242 0.758 0 0  0 0 0 1 0"/></filter>
+  <filter id="cvd-deutan"><feColorMatrix type="matrix" values="0.625 0.375 0 0 0  0.7 0.3 0 0 0  0 0.3 0.7 0 0  0 0 0 1 0"/></filter>
+  <filter id="cvd-tritan"><feColorMatrix type="matrix" values="0.95 0.05 0 0 0  0 0.433 0.567 0 0  0 0.475 0.525 0 0  0 0 0 1 0"/></filter>
+  <filter id="cvd-achro"><feColorMatrix type="matrix" values="0.299 0.587 0.114 0 0  0.299 0.587 0.114 0 0  0.299 0.587 0.114 0 0  0 0 0 1 0"/></filter>
+</svg>
+
+<header class="mbar">
+  <p class="name">Ayşegül Atik</p>
+  <button id="openSide" aria-controls="side" aria-expanded="false"><span lang="tr">Menü</span><span lang="en">Menu</span></button>
+</header>
+
+<aside class="side" id="side" aria-label="Profil ve menü">
+  <button class="close-side" id="closeSide"><span lang="tr">Kapat</span><span lang="en">Close</span></button>
+  <div>
+    <p class="name">Ayşegül Atik</p>
+    <p class="role"><span lang="tr">Tasarım eğitmeni ve araştırmacı, İstanbul</span><span lang="en">Design educator and researcher, Istanbul</span></p>
+  </div>
+  <dl class="prog">
+    <dt><span lang="tr">Program</span><span lang="en">Programme</span></dt>
+    <dd>Mercedes-Benz She’s Mentoring</dd>
+    <dt><span lang="tr">Kategori</span><span lang="en">Category</span></dt>
+    <dd><span lang="tr">Teknoloji ve İnovasyon</span><span lang="en">Technology and Innovation</span></dd>
+    <dt><span lang="tr">Mentör</span><span lang="en">Mentor</span></dt>
+    <dd>Şebnem Işık Ersoy</dd>
+  </dl>
+  <nav aria-label="Bölümler">
+    <ul id="navList"><li><a href="#giris"><span lang="tr">Merhaba</span><span lang="en">Hello</span></a></li><li><a href="#harita"><span lang="tr">Sunumun haritası</span><span lang="en">Map</span></a></li><li class="grp" data-part="1"><button type="button" aria-expanded="false"><span class="grp-n">1</span> <span lang="tr">Projem</span><span lang="en">My project</span></button><ul><li><a href="#fikrim"><span lang="tr">Projem</span><span lang="en">My project</span></a></li><li><a href="#yaklasim"><span lang="tr">Yaklaşımım</span><span lang="en">My approach</span></a></li><li><a href="#dongu"><span lang="tr">Kendi döngüm</span><span lang="en">My cycle</span></a></li><li><a href="#platform"><span lang="tr">Platform</span><span lang="en">Platform</span></a></li><li><a href="#ide">IDE by AYS</a></li><li><a href="#ihtiyac"><span lang="tr">Neye çözüm getiriyorum</span><span lang="en">What I solve</span></a></li><li><a href="#fayda"><span lang="tr">Topluma katkısı</span><span lang="en">Social impact</span></a></li><li><a href="#etki"><span lang="tr">Bilinçli üretim</span><span lang="en">Conscious making</span></a></li></ul></li><li class="grp" data-part="2"><button type="button" aria-expanded="false"><span class="grp-n">2</span> <span lang="tr">Bu fikre nasıl ulaştım</span><span lang="en">How I arrived at it</span></button><ul><li><a href="#ben"><span lang="tr">Ben kimim</span><span lang="en">Who I am</span></a></li><li><a href="#vaka1">Case Study 1</a></li><li><a href="#sektor"><span lang="tr">Sektör nereye gidiyor</span><span lang="en">Where the industry is heading</span></a></li><li><a href="#ogrenciler"><span lang="tr">Öğrencilerden</span><span lang="en">From students</span></a></li><li><a href="#shes">She’s Mentoring</a></li></ul></li><li class="grp" data-part="3"><button type="button" aria-expanded="false"><span class="grp-n">3</span> <span lang="tr">Nasıl hayata geçireceğim</span><span lang="en">How I’ll bring it to life</span></button><ul><li><a href="#ozet"><span lang="tr">İş planı tek sayfada</span><span lang="en">Plan on one page</span></a></li><li><a href="#rekabet"><span lang="tr">Benzer platformlar</span><span lang="en">Similar platforms</span></a></li><li><a href="#swot">SWOT</a></li><li><a href="#kanvas">Business Model Canvas</a></li><li><a href="#gelir"><span lang="tr">Gelir modeli</span><span lang="en">Revenue model</span></a></li><li><a href="#pazarlama"><span lang="tr">Pazarlama</span><span lang="en">Marketing</span></a></li><li><a href="#odul"><span lang="tr">Ödül bütçesi</span><span lang="en">Prize budget</span></a></li><li><a href="#yol"><span lang="tr">Yol haritası ve hedefler</span><span lang="en">Roadmap and targets</span></a></li><li><a href="#riskler"><span lang="tr">Başarının dayanakları</span><span lang="en">What success rests on</span></a></li><li><a href="#arge"><span lang="tr">Ar-Ge</span><span lang="en">R&amp;D</span></a></li></ul></li><li><a href="#tesekkur"><span lang="tr">Teşekkürler</span><span lang="en">Thank you</span></a></li><li><a href="#kaynaklar"><span lang="tr">Kaynaklar</span><span lang="en">Sources</span></a></li></ul>
+  </nav>
+  <p class="where" id="where" aria-live="polite">1 / 24</p>
+  <div class="langs" role="group" aria-label="Dil / Language">
+    <button data-setlang="tr" aria-pressed="true">TR</button>
+    <button data-setlang="en" aria-pressed="false">EN</button>
+  </div>
+  <p class="side-foot"><span lang="tr">Kasım 2026</span><span lang="en">November 2026</span></p>
+</aside>
+
+<main id="main" tabindex="-1">
+<section class="page" id="giris" aria-labelledby="h-giris">
+  <h1 id="h-giris"><span lang="tr">Merhaba.</span><span lang="en">Hello.</span></h1>
+  <p class="lede"><span lang="tr">Bu sunumda altı aylık gelişimimi ve mentörüm Şebnem Işık Ersoy’la birlikte şekillendirdiğimiz projemin son hâlini anlatıyorum.</span><span lang="en">In this presentation I share six months of growth and the final shape of the project I developed with my mentor, Şebnem Işık Ersoy.</span></p>
+  <p class="lede"><span lang="tr">Sunumu bir kullanıcı deneyimi olarak üç bölümde kurguladım: projem, bu fikre nasıl ulaştığım ve onu nasıl hayata geçireceğim. İşim görsel ağırlıklı olduğu için sunumu bilerek sade tuttum; görsel çalışmalarımı <a href="https://www.instagram.com/aysatik/" target="_blank" rel="noopener">Instagram</a> hesabımda görebilirsiniz.</span><span lang="en">I designed the presentation as a user experience in three parts: my project, how I arrived at it, and how I will bring it to life. My work is visually heavy, so I kept the presentation deliberately plain; you can see my visual work on my <a href="https://www.instagram.com/aysatik/" target="_blank" rel="noopener">Instagram</a>.</span></p>
+  <p class="mute"><span lang="tr">Sayfalar arasında kaydırarak ya da soldaki menüden geçebilirsiniz. Sunumun herkes için rahat okunabilmesi için erişilebilirlik ayarları ekledim: sağdaki Görünüm paneline tıklayarak arka plan renginden yazı boyutuna, disleksi dostu yazı tipinden sesli okumaya kadar sunumu kendinize göre düzenleyebilirsiniz.</span><span lang="en">Scroll between pages or use the menu on the left. So that everyone can read it comfortably, I added accessibility settings: click the Display panel on the right to adjust everything from background colour and text size to a dyslexia-friendly typeface and read-aloud.</span></p>
+</section>
+<section class="page" id="harita" aria-labelledby="h-harita">
+  <h2 id="h-harita"><span lang="tr">Sunumun haritası</span><span lang="en">Map of the presentation</span></h2>
+  <ol class="map">
+    <li><a href="#fikrim"><span class="map-n">1</span><b><span lang="tr">Projem</span><span lang="en">My project</span></b><span><span lang="tr">Ne yapıyorum, kime ve nasıl dokunuyor</span><span lang="en">What I do, and whom it reaches</span></span></a></li>
+    <li><a href="#ben"><span class="map-n">2</span><b><span lang="tr">Bu fikre nasıl ulaştım</span><span lang="en">How I arrived at it</span></b><span><span lang="tr">Beni besleyen alanlar, ilhamlarım ve sektörün yönü</span><span lang="en">The fields that shaped me, my inspirations and where the industry is going</span></span></a></li>
+    <li><a href="#ozet"><span class="map-n">3</span><b><span lang="tr">Nasıl hayata geçireceğim</span><span lang="en">How I’ll bring it to life</span></b><span><span lang="tr">İş modeli, bütçe, takvim ve hedefler</span><span lang="en">Business model, budget, timeline and targets</span></span></a></li>
+  </ol>
+</section>
+<section class="page" id="fikrim" aria-labelledby="h-fikrim">
+  <p class="kicker"><span lang="tr">/ 01 // PROJEM</span><span lang="en">/ 01 // MY PROJECT</span></p>
+  <h2 id="h-fikrim"><span lang="tr">Teknolojiyi insan için tasarladığımız bir dünya</span><span lang="en">A world where we design technology for people</span></h2>
+  <p class="lede"><span lang="tr">Bilgisayarın fiziksel hayattan kopuk değil, onun bir simülasyonu olduğu; insanların bilgisayar teknolojilerine önyargıyla bakmadığı; tasarımlarımızın ve süreçlerimizin sonuçlarını hesaba kattığımız, doğaya ve insana verdiğimiz zararı gözettiğimiz; teknolojinin hayatımızdaki yerini yeniden düşündüğümüz ve onu yalnızca teknolojik gelişme için değil, insan için tasarlayıp geliştirdiğimiz bir dünya hayal ediyorum.</span><span lang="en">I imagine a world where the computer is not cut off from physical life but a simulation of it; where people don’t approach computer technologies with prejudice; where we account for the consequences of our designs and processes and the harm we do to nature and people; where we rethink technology’s place in our lives and design and develop it not just for technological progress, but for people.</span></p>
+  <p class="lede"><span lang="tr">Bunu bir yerden başlatabilmek için önce okullarda verdiğim derslerde, sonra kendi sınıflarımda bu bakış açısını öğretmeye başladım. Size sunduğum platformla bunu İngilizce olarak çok daha fazla insana ulaştırmak istiyorum: hem yetişmekte olan hem de sektörde çalışan tasarımcılara alternatif bir bakış açısı sunmak; kendi yaklaşımımı ve örnek aldığım tasarımcıların süreçlerini derslere dönüştürerek ihtiyaç duyan ve merak eden herkesle buluşturmak.</span><span lang="en">To start somewhere, I began teaching this way of seeing first in my classes at the schools, then in my own classes. With the platform I’m presenting, I want to bring it, in English, to many more people: to offer both emerging and working designers an alternative perspective, and to turn my approach and the processes of the designers I learn from into courses for everyone who needs them or is curious.</span></p>
+</section>
+<section class="page" id="yaklasim" aria-labelledby="h-yaklasim">
+  <p class="kicker"><span lang="tr">/ 01 // PROJEM</span><span lang="en">/ 01 // MY PROJECT</span></p>
+  <h2 id="h-yaklasim"><span lang="tr">Bilgisayar da kalem ve makas gibi bir araç</span><span lang="en">The computer is a tool, like pencil and scissors</span></h2>
+  <p class="lede"><span lang="tr">Bilgisayarda kullandığımız üç boyutlu programların çoğu fizik yasalarına dayanıyor: aynı yer çekimini, aynı malzeme verisini, aynı simülasyon motorlarını kullanıyor. Bir kumaş gerçek hayatta nasıl dökülüyorsa ekranda da öyle dökülüyor. Bu yüzden bilgisayarı gerçek hayattan kopuk değil, onun bir simülasyonu olarak görüyorum: gerçekte hesaplayamadığımız şeyleri dijitalde keşfedip, örneğin bir kumaşa dönüştürerek yeniden gerçek hayata taşıyabiliyoruz.</span><span lang="en">Most of the 3D programmes we use run on the laws of physics: the same gravity, the same material data, the same simulation engines. A fabric drapes on screen the way it drapes in real life. So I see the computer not as cut off from real life but as a simulation of it: we can discover digitally what we can’t calculate in reality, and carry it back into real life, as a fabric for instance.</span></p>
+  <p><span lang="tr">Bir dikiş makinesinde dikilen şey ne kadar el emeğiyse, bilgisayarda tasarlanan da o kadar el emeği; bilgisayar düğmeye basınca kendi kendine tasarım yapmıyor. Önyargının çoğu bilinmezlikten geliyor. Örneğin bilgisayar grafiğinin en zor konularından biri sayılan “UV açılımı”, üç boyutlu bir yüzeyi düz bir zemine açmak demek; moda öğrencilerinin her gün yaptığı kalıp çıkarmanın tam tersi. İkisini birbirine bağlayarak anlattığımda, zor sanılan konu bir anda anlaşılır oluyor.</span><span lang="en">What is sewn on a sewing machine is as handmade as what is designed on a computer; the computer doesn’t design by itself at the press of a button. Most prejudice comes from the unknown. “UV unwrapping”, considered one of the hardest topics in computer graphics, means opening a 3D surface onto a flat plane; it is the exact reverse of the pattern-making fashion students do every day. When I connect the two, a topic thought to be hard suddenly becomes clear.</span></p>
+  <p><span lang="tr">Öğrencilerime şunu da söylüyorum: tasarım istediğimiz gibi çıkmıyorsa, bilgisayara bir şey söylemeyi unutmuşuzdur. Hata sandığımız şey çoğu zaman bir iletişim aksaklığıdır; ana dilimizde bile kendimizi anlatırken hata yapıyorsak, bambaşka bir dil konuşan bir makineyle iletişimin zaman alması çok doğal.</span><span lang="en">I also tell my students: if a design isn’t turning out the way we want, we forgot to tell the computer something. What we call an error is usually a breakdown in communication; if we make mistakes even in our mother tongue, it’s natural that talking to a machine that speaks an entirely different language takes time.</span></p>
+</section>
+<section class="page" id="dongu" aria-labelledby="h-dongu">
+  <p class="kicker"><span lang="tr">/ 01 // PROJEM</span><span lang="en">/ 01 // MY PROJECT</span></p>
+  <h2 id="h-dongu"><span lang="tr">Bauhaus’tan bugüne: kendi döngüm</span><span lang="en">From the Bauhaus to now: my own cycle</span></h2>
+  <p class="lede"><span lang="tr">Yüz yıl arayla aynı soru: farklı disiplinler tek bir eğitimde ve tek bir pratikte nasıl buluşur?</span><span lang="en">The same question, a century apart: how do different disciplines meet in a single education and a single practice?</span></p>
+  <div class="figs">
+    <figure>
+      <div class="scroll-x"><svg class="diagram" viewBox="0 0 400 400" role="img" aria-labelledby="bh-t"><title id="bh-t">Bauhaus curriculum diagram, after Walter Gropius, 1922</title><defs><path id="o-top" d="M26.0 200.0 A174 174 0 0 1 374.0 200.0"/><path id="o-bot" d="M20.0 200.0 A180 180 0 0 0 380.0 200.0"/><path id="s-top" d="M62.0 200.0 A138 138 0 0 1 338.0 200.0"/><path id="s-bot" d="M54.0 200.0 A146 146 0 0 0 346.0 200.0"/></defs><circle cx="200" cy="200" r="192" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="200" cy="200" r="158" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="200" cy="200" r="124" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="200" cy="200" r="56" fill="none" stroke="currentColor" stroke-width="2"/><line x1="324.0" y1="200.0" x2="358.0" y2="200.0" stroke="currentColor" stroke-width="1.2"/><line x1="200.0" y1="76.0" x2="200.0" y2="42.0" stroke="currentColor" stroke-width="1.2"/><line x1="76.0" y1="200.0" x2="42.0" y2="200.0" stroke="currentColor" stroke-width="1.2"/><line x1="200.0" y1="324.0" x2="200.0" y2="358.0" stroke="currentColor" stroke-width="1.2"/><line x1="200.0" y1="144.0" x2="200.0" y2="76.0" stroke="currentColor" stroke-width="1"/><text x="239.0" y="122.9" text-anchor="middle" font-size="11" font-weight="500">WOOD</text><line x1="243.8" y1="165.1" x2="296.9" y2="122.7" stroke="currentColor" stroke-width="1"/><text x="287.7" y="184.0" text-anchor="middle" font-size="11" font-weight="500">METAL</text><line x1="254.6" y1="212.5" x2="320.9" y2="227.6" stroke="currentColor" stroke-width="1"/><text x="270.4" y="260.1" text-anchor="middle" font-size="11" font-weight="500">TEXTILES</text><line x1="224.3" y1="250.5" x2="253.8" y2="311.7" stroke="currentColor" stroke-width="1"/><text x="200.0" y="294.0" text-anchor="middle" font-size="11" font-weight="500">COLOUR</text><line x1="175.7" y1="250.5" x2="146.2" y2="311.7" stroke="currentColor" stroke-width="1"/><text x="129.6" y="260.1" text-anchor="middle" font-size="11" font-weight="500">GLASS</text><line x1="145.4" y1="212.5" x2="79.1" y2="227.6" stroke="currentColor" stroke-width="1"/><text x="112.3" y="184.0" text-anchor="middle" font-size="11" font-weight="500">CLAY</text><line x1="156.2" y1="165.1" x2="103.1" y2="122.7" stroke="currentColor" stroke-width="1"/><text x="161.0" y="122.9" text-anchor="middle" font-size="11" font-weight="500">STONE</text><text font-size="12" font-weight="500" letter-spacing="2"><textPath href="#o-top" startOffset="50%" text-anchor="middle">PRELIMINARY COURSE</textPath></text><text font-size="12" font-weight="500" letter-spacing="2"><textPath href="#o-bot" startOffset="50%" text-anchor="middle">PRELIMINARY COURSE</textPath></text><text font-size="8.5"><textPath href="#s-top" startOffset="25%" text-anchor="middle">MATERIALS &amp; TOOLS</textPath></text><text font-size="8.5"><textPath href="#s-top" startOffset="75%" text-anchor="middle">STUDY OF NATURE</textPath></text><text font-size="8.5"><textPath href="#s-bot" startOffset="25%" text-anchor="middle">CONSTRUCTION</textPath></text><text font-size="8.5"><textPath href="#s-bot" startOffset="75%" text-anchor="middle">SPACE, COLOUR, FORM</textPath></text><text x="200" y="196" text-anchor="middle" font-size="12" font-weight="500">BUILDING</text><text x="200" y="212" text-anchor="middle" font-size="7.5">DESIGN, TESTING</text></svg></div>
+      <figcaption><span lang="tr"><b>Bauhaus müfredat diyagramı</b>, Walter Gropius, 1922 (yeniden çizim). Hazırlık kursundan malzeme atölyelerine, merkezde yapıya uzanan bütüncül bir eğitim modeli.</span><span lang="en"><b>Bauhaus curriculum diagram</b>, Walter Gropius, 1922 (redrawn). A holistic model of education, from the preliminary course through the material workshops to building at the centre.</span> <a href="https://www.moma.org/calendar/events/6596" target="_blank" rel="noopener">MoMA</a></figcaption>
+    </figure>
+    <figure>
+      <!-- Neri Oxman’s diagram goes here: add the image file with its credit, e.g. <img src="krebs.png" alt="Krebs Cycle of Creativity, Neri Oxman"> -->
+      <div class="ref-card">
+        <p class="ref-title">Krebs Cycle of Creativity</p>
+        <p>Neri Oxman, <i>Journal of Design and Science</i>, 2016</p>
+        <p class="mute" style="margin-top:1rem"><span lang="tr">Diyagram telif hakkı nedeniyle burada yer almıyor; alttaki bağlantılardan inceleyebilirsiniz.</span><span lang="en">The diagram is not shown here for copyright reasons; you can view it through the links below.</span></p>
+      </div>
+      <figcaption><span lang="tr">Sanat, bilim, mühendislik ve tasarım tek döngüde; birinin çıktısı diğerinin girdisi. Bauhaus diyagramından esinleniyor ve tek bir kişinin birden fazla alanda var olabileceğini savunuyor. Oxman’ın çıkış noktası biyoloji.</span><span lang="en">Art, science, engineering and design in one cycle, where the output of one becomes the input of another. Inspired by the Bauhaus diagram, it holds that one person can live in several domains. Oxman’s starting point is biology.</span> <a href="https://betterworld.mit.edu/spectrum/issues/winter-2017/neri-oxmans-krebs-cycle-of-creativity/" target="_blank" rel="noopener">MIT</a>, <a href="https://www.moma.org/calendar/events/6596" target="_blank" rel="noopener">MoMA</a></figcaption>
+    </figure>
+    <figure>
+      <div class="ref-card">
+        <p class="ref-title">Critical Matter</p>
+        <p>Behnaz Farahi, MIT Media Lab</p>
+        <p class="mute" style="margin-top:1rem">“A future for design that goes beyond the mere application of technology.”</p>
+      </div>
+      <figcaption><span lang="tr">Malzeme araştırmasını sosyal ve beşeri bilimlerden kopuk bırakmayan bir grup. Çalışmalarını birbirine bağlı üç alanda yürütüyor: sosyal, psikolojik ve malzeme. Bir proje malzeme deneyiyle başlayıp beden ve kimlik sorusuna, ya da toplumsal bir soruyla başlayıp yeni bir malzemeye varabiliyor.</span><span lang="en">A group that keeps material research connected to the social sciences and humanities. Its work runs across three interconnected areas: social, psychological and material. A project can start with a material experiment and arrive at questions of body and identity, or start with a social question and lead to a new material.</span> <a href="https://www.media.mit.edu/groups/critical-matter/overview/" target="_blank" rel="noopener">MIT Media Lab</a></figcaption>
+    </figure>
+    <figure>
+      <div class="ref-card">
+        <p class="ref-title">Future Sketches</p>
+        <p>Zach Lieberman, MIT Media Lab</p>
+        <p class="mute" style="margin-top:1rem">“The soft side of software.”</p>
+      </div>
+      <figcaption><span lang="tr">Yazılımı sanat ve tasarım için bir malzeme olarak ele alıyor; araç setleri ve öğretim yaklaşımlarıyla yeni bir kuşak için “hesaplamalı zanaat” geliştiriyor. Başarıyı, yaptıkları araçların başkalarının elinde işe dönüşmesi olarak tanımlıyor. Bilgisayarın da bir zanaat aracı olduğu fikrine en yakın referans.</span><span lang="en">Treats software as a medium for art and design, and uses toolkits and teaching to build “computational craft” for a new generation. Defines success as the tools they build ending up in other people’s hands, making work. The closest reference to the idea that the computer is a craft tool too.</span> <a href="https://www.media.mit.edu/groups/future-sketches/overview/" target="_blank" rel="noopener">MIT Media Lab</a></figcaption>
+    </figure>
+  </div>
+  <figure class="wide">
+    <div class="scroll-x"><svg class="diagram" viewBox="0 0 960 490" role="img" aria-labelledby="my-t"><title id="my-t">Ayşegül Atik: computer graphics at the centre of a phygital cycle</title><defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="currentColor"/></marker></defs><path d="M230 69 L325 165" fill="none" stroke="currentColor" stroke-width="1" marker-end="url(#ar)"/><path d="M590 165 L695 69" fill="none" stroke="currentColor" stroke-width="1" marker-end="url(#ar)"/><path d="M230 134 L325 165" fill="none" stroke="currentColor" stroke-width="1" marker-end="url(#ar)"/><path d="M590 165 L695 134" fill="none" stroke="currentColor" stroke-width="1" marker-end="url(#ar)"/><path d="M230 199 L325 165" fill="none" stroke="currentColor" stroke-width="1" marker-end="url(#ar)"/><path d="M590 165 L695 199" fill="none" stroke="currentColor" stroke-width="1" marker-end="url(#ar)"/><path d="M230 264 L325 165" fill="none" stroke="currentColor" stroke-width="1" marker-end="url(#ar)"/><path d="M590 165 L695 264" fill="none" stroke="currentColor" stroke-width="1" marker-end="url(#ar)"/><path d="M460 215 V300 H140 V355" fill="none" stroke="currentColor" stroke-width="1" marker-end="url(#ar)"/><path d="M820 288 V355" fill="none" stroke="currentColor" stroke-width="1" marker-end="url(#ar)"/><path d="M240 384 H285" stroke="currentColor" stroke-width="1.2" marker-end="url(#ar)"/><path d="M490 384 H535" stroke="currentColor" stroke-width="1.2" marker-end="url(#ar)"/><path d="M740 384 H775" stroke="currentColor" stroke-width="1.2" marker-end="url(#ar)"/><path d="M640 408 V462 H140 V413" fill="none" stroke="currentColor" stroke-width="1.2" marker-end="url(#ar)"/><text lang="tr" x="20" y="30" font-size="12" class="m" text-anchor="start">Kaynak</text><text lang="en" x="20" y="30" font-size="12" class="m" text-anchor="start">Source</text><text lang="tr" x="460" y="100" font-size="12" class="m" text-anchor="middle">Çekirdek</text><text lang="en" x="460" y="100" font-size="12" class="m" text-anchor="middle">Core</text><text lang="tr" x="700" y="30" font-size="12" class="m" text-anchor="start">Uygulama alanları</text><text lang="en" x="700" y="30" font-size="12" class="m" text-anchor="start">Fields of practice</text><text lang="tr" x="152" y="345" font-size="12" class="m" text-anchor="start">Ar-Ge: phygital döngü</text><text lang="en" x="152" y="345" font-size="12" class="m" text-anchor="start">R&amp;D: the phygital loop</text><rect x="20" y="45" width="210" height="48" fill="var(--bg)" stroke="currentColor" stroke-width="1.2"/><text lang="tr" x="125.0" y="74.0" text-anchor="middle" font-size="13" font-weight="400">Fizik</text><text lang="en" x="125.0" y="74.0" text-anchor="middle" font-size="13" font-weight="400">Physics</text><rect x="20" y="110" width="210" height="48" fill="var(--bg)" stroke="currentColor" stroke-width="1.2"/><text lang="tr" x="125.0" y="139.0" text-anchor="middle" font-size="13" font-weight="400">Matematik ve geometri</text><text lang="en" x="125.0" y="139.0" text-anchor="middle" font-size="13" font-weight="400">Maths and geometry</text><rect x="20" y="175" width="210" height="48" fill="var(--bg)" stroke="currentColor" stroke-width="1.2"/><text lang="tr" x="125.0" y="204.0" text-anchor="middle" font-size="13" font-weight="400">Gerçek dünya verisi</text><text lang="en" x="125.0" y="204.0" text-anchor="middle" font-size="13" font-weight="400">Real-world data</text><rect x="20" y="240" width="210" height="48" fill="var(--bg)" stroke="currentColor" stroke-width="1.2"/><text lang="tr" x="125.0" y="269.0" text-anchor="middle" font-size="13" font-weight="400">İnsan: algı ve davranış</text><text lang="en" x="125.0" y="269.0" text-anchor="middle" font-size="13" font-weight="400">People: perception, behaviour</text><rect x="700" y="45" width="240" height="48" fill="var(--bg)" stroke="currentColor" stroke-width="1.2"/><text lang="tr" x="820.0" y="74.0" text-anchor="middle" font-size="13" font-weight="400">Görsel iletişim</text><text lang="en" x="820.0" y="74.0" text-anchor="middle" font-size="13" font-weight="400">Visual communication</text><rect x="700" y="110" width="240" height="48" fill="var(--bg)" stroke="currentColor" stroke-width="1.2"/><text lang="tr" x="820.0" y="139.0" text-anchor="middle" font-size="13" font-weight="400">Tekstil ve moda</text><text lang="en" x="820.0" y="139.0" text-anchor="middle" font-size="13" font-weight="400">Textiles and fashion</text><rect x="700" y="175" width="240" height="48" fill="var(--bg)" stroke="currentColor" stroke-width="1.2"/><text lang="tr" x="820.0" y="204.0" text-anchor="middle" font-size="13" font-weight="400">İç mimarlık ve mekân</text><text lang="en" x="820.0" y="204.0" text-anchor="middle" font-size="13" font-weight="400">Interiors and space</text><rect x="700" y="240" width="240" height="48" fill="var(--bg)" stroke="currentColor" stroke-width="1.2"/><text lang="tr" x="820.0" y="269.0" text-anchor="middle" font-size="13" font-weight="400">Ses ve ışık</text><text lang="en" x="820.0" y="269.0" text-anchor="middle" font-size="13" font-weight="400">Sound and light</text><rect x="330" y="115" width="260" height="100" fill="var(--bg)" stroke="currentColor" stroke-width="2.2"/><text lang="tr" x="460.0" y="162.0" text-anchor="middle" font-size="17" font-weight="500">Bilgisayar grafiği</text><text lang="en" x="460.0" y="162.0" text-anchor="middle" font-size="17" font-weight="500">Computer graphics</text><text lang="tr" x="460.0" y="186.0" text-anchor="middle" font-size="12" class="m">simülasyon, kod, 3D</text><text lang="en" x="460.0" y="186.0" text-anchor="middle" font-size="12" class="m">simulation, code, 3D</text><rect x="40" y="360" width="200" height="48" fill="var(--bg)" stroke="currentColor" stroke-width="1.2"/><text lang="tr" x="140.0" y="389.0" text-anchor="middle" font-size="13" font-weight="400">Dijitalde keşfet</text><text lang="en" x="140.0" y="389.0" text-anchor="middle" font-size="13" font-weight="400">Discover digitally</text><rect x="290" y="360" width="200" height="48" fill="var(--bg)" stroke="currentColor" stroke-width="1.2"/><text lang="tr" x="390.0" y="389.0" text-anchor="middle" font-size="13" font-weight="400">Fizikselde üret</text><text lang="en" x="390.0" y="389.0" text-anchor="middle" font-size="13" font-weight="400">Make physically</text><rect x="540" y="360" width="200" height="48" fill="var(--bg)" stroke="currentColor" stroke-width="1.2"/><text lang="tr" x="640.0" y="389.0" text-anchor="middle" font-size="13" font-weight="400">Ölç, geri besle</text><text lang="en" x="640.0" y="389.0" text-anchor="middle" font-size="13" font-weight="400">Measure, feed back</text><rect x="780" y="360" width="160" height="48" fill="var(--bg)" stroke="currentColor" stroke-width="2.2"/><text lang="tr" x="860.0" y="389.0" text-anchor="middle" font-size="13" font-weight="500">Eğitim: platform</text><text lang="en" x="860.0" y="389.0" text-anchor="middle" font-size="13" font-weight="500">Education: platform</text></svg></div>
+    <figcaption><span lang="tr"><b>Benim döngüm.</b> Merkezde bilgisayar grafiği. Fizik motorları ve gerçek veriyle bilgisayar bir laboratuvara dönüşüyor: gerçekte hesaplayamadığımızı dijitalde keşfedip fiziksel tasarıma, örneğin bir kumaşa taşıyorum; sonucu ölçüp tekrar dijitale besliyorum. Oxman biyolojiden geliyor, ben fizikten ve hesaplamalı tasarımdan. Farahi’nin psikolojik ekseni gibi, benim döngümde de insan algısı ve davranışı bir girdi.</span><span lang="en"><b>My cycle.</b> Computer graphics at the centre. With physics engines and real data, the computer becomes a lab: I discover digitally what we can’t calculate in real life and carry it into physical design, a fabric for instance, then measure the result and feed it back. Oxman comes from biology; I come from physics and computational design. As in Farahi’s psychological axis, human perception and behaviour are an input to my cycle too.</span></figcaption>
+  </figure>
+</section>
+<section class="page" id="platform" aria-labelledby="h-platform">
+  <p class="kicker"><span lang="tr">/ 01 // PROJEM</span><span lang="en">/ 01 // MY PROJECT</span></p>
+  <h2 id="h-platform"><span lang="tr">Platform</span><span lang="en">The platform</span></h2>
+  <p class="lede"><span lang="tr">Tasarımcılar bugün grafikten mimariye, modadan ürün tasarımına kadar her alanda bilgisayar programlarıyla çalışıyor: Illustrator ve Photoshop gibi görsel tasarım programları, CLO3D gibi kıyafeti dikmeden önce üç boyutlu olarak tasarlamaya yarayan programlar, TouchDesigner gibi ışığı ve görüntüyü canlı olarak yöneten programlar. Bu araçları bilmek, bir tasarımcının fikrini atölyeye ya da fabrikaya ihtiyaç duymadan, kendi bilgisayarında hayata geçirebilmesi demek.</span><span lang="en">Designers today work with computer programmes in every field, from graphics and architecture to fashion and product design: visual design programmes like Illustrator and Photoshop, programmes like CLO3D that let you design a garment in 3D before it is sewn, programmes like TouchDesigner that control light and image live. Knowing these tools means a designer can bring an idea to life on their own computer, without needing a workshop or a factory.</span></p>
+  <p><span lang="tr">Platformda bu programları öğretiyorum; ama yalnızca hangi düğmeye basılacağını değil, programın arkasındaki mantığı, aynı bilginin başka hangi tasarım alanlarında işe yaradığını ve bir tasarımcının bu araçlarla neleri sorgulaması gerektiğini de. Bugün tasarım eğitimi ya lisans programlarına dayanıyor ya da yazılımı yaratıcı düşünceden, eleştirel bakıştan ve insan faktöründen ayırıp tek başına anlatan derslerden oluşuyor. Bu platform buna alternatif olarak modüler bir yapı kuruyor: herkes yalnızca ihtiyaç duyduğu dersi alabiliyor.</span><span lang="en">On the platform I teach these programmes; not just which button to press, but the logic behind the programme, which other design fields the same knowledge serves, and what a designer should question when using these tools. Design education today either rests on degree programmes or on courses that teach software in isolation from creative thinking, critical perspective and the human factor. As an alternative, this platform is modular: everyone takes only the courses they need.</span></p>
+  <p><span lang="tr">İnsanların, arkasında kimin ve hangi motivasyonun olduğunu bilmedikleri kurumlar yerine, gördükleri ve tanıdıklarını hissettikleri insanlara daha çok güvendiğini görüyorum. Pandemiden sonra yaygınlaşan çevrim içi eğitimi ve İngilizce anlatımı bu yüzden bir avantaja çeviriyorum: kayıtlı video dersler, canlı programlar ve atölyeler.</span><span lang="en">I see people trusting individuals they can see and feel they know more than institutions whose people and motives they don’t know. That’s why I turn online learning, which spread after the pandemic, and teaching in English into an advantage: recorded video courses, live programmes and workshops.</span></p>
+  <p class="mute"><span lang="tr">Teknolojik araçlara ilgi duyan ya da önyargılı olsa da onlara bir şans vermek isteyen herkes için: tasarım öğrencileri, sektörde çalışan tasarımcılar, kariyerini tasarıma yönlendirmek isteyenler ve özellikle kadınlar.</span><span lang="en">For anyone curious about technological tools, or wary of them but willing to give them a chance: design students, working designers, people moving into design, and women in particular.</span></p>
+</section>
+<section class="page" id="ide" aria-labelledby="h-ide">
+  <p class="kicker"><span lang="tr">/ 01 // PROJEM</span><span lang="en">/ 01 // MY PROJECT</span></p>
+  <h2 id="h-ide"><span lang="tr">Kardeş projem: IDE by AYS</span><span lang="en">My sister project: IDE by AYS</span></h2>
+  <p class="lede"><span lang="tr">IDE by AYS, internet üzerinden dinlenen bir sohbet ve anlatım serisi, yani bir podcast. Platform bu bakışın pratiğini, podcast ise düşünce tarafını taşıyor; biri el, diğeri zihin gibi.</span><span lang="en">IDE by AYS is a podcast: a series of conversations and talks you listen to online. The platform carries the practice of this way of seeing, the podcast its thinking; one is the hand, the other the mind.</span></p>
+  <p><span lang="tr">Temmuz 2018’de üniversiteden mezun olduğumda, öğrendiklerimi unutmamak ve kendi zihnimi haritalamak için her ay bir dosya tutmaya başladım. Okuduğum kitaplardan izlediğim filmlere, öğrendiğim terimlerden araştırdığım konulara ve beni etkileyen alıntılara kadar her şeyi buraya not ediyorum. Bu dosyalar, hangi konulara tekrar tekrar döndüğümü ve bir konuyu araştırırken başka nelere uzandığımı görmemi sağlıyor. Bugün 93 aylık bir arşiv oldu; derslerimde öğrencilerime verdiğim referansların kaynağı da bu dosyalar. Podcast’in adı buradan geliyor: IDE bu dosyalar, AYS adımın kısaltması.</span><span lang="en">When I graduated in July 2018, I began keeping a file every month so I wouldn’t forget what I learned and could map my own mind. I note everything there, from books I read and films I watch to terms I learn, topics I research and quotes that move me. These files show me which subjects I keep returning to and where a topic leads me. Today it is an archive of 93 months, and it is the source of the references I give my students. The podcast’s name comes from here: IDE is these files, AYS is short for my name.</span></p>
+  <p><span lang="tr">Fikir mentörümle yaptığımız görüşmelerde doğdu. Benden ders almak isteyenlerin çoğunun, daha önce derslerimde beni tanımış öğrenciler olduğunu fark ettim; beni tanımayan biri benden neden eğitim alsın? Podcast bu sorunun cevabı: derslerimdeki enerjiyi ve düşünme biçimimi, insanlar derse gelmeden önce tanıyabilsin diye. Bölümlerde bir tasarımcı ve eğitmen olarak dünyaya nasıl baktığımı anlatıyor, ilham aldığım insanlarla konuşuyorum; konuklarımın programına bağlı kalmamak için kendi anlattığım bölümler de var. Podcast’i dinleyenler platforma, platformdaki öğrenciler podcast’e geliyor.</span><span lang="en">The idea came out of conversations with my mentor. I noticed that most people who wanted to take my courses were students who already knew me from class; why would someone who doesn’t know me learn from me? The podcast is the answer: so people can meet the energy and way of thinking from my classes before they ever join one. In the episodes I talk about how I see the world as a designer and educator and speak with people who inspire me; there are also episodes I record on my own, so I don’t depend on guests’ schedules. Listeners come to the platform, and students on the platform come to the podcast.</span></p>
+</section>
+<section class="page" id="ihtiyac" aria-labelledby="h-ihtiyac">
+  <p class="kicker"><span lang="tr">/ 01 // PROJEM</span><span lang="en">/ 01 // MY PROJECT</span></p>
+  <h2 id="h-ihtiyac"><span lang="tr">Neye çözüm getiriyorum</span><span lang="en">What I offer a solution to</span></h2>
+  <p class="lede"><span lang="tr">Teknolojiyi insan için ele alan çok değerli işler, MIT Media Lab gibi araştırma laboratuvarlarında üretiliyor: Neri Oxman araştırma grubunu orada kurdu, Behnaz Farahi ve Zach Lieberman’ın grupları orada çalışıyor. Ama bu bakış, bugün herkesin ulaşabileceği bir yerde değil.</span><span lang="en">Very valuable work that treats technology as something for people is produced in research labs like the MIT Media Lab: Neri Oxman founded her research group there, and Behnaz Farahi’s and Zach Lieberman’s groups work there. But this perspective isn’t yet within everyone’s reach.</span></p>
+  <div class="pairs">
+    <div class="pr"><div class="pr-n">1</div><div class="pr-p"><p class="mini"><span lang="tr">İhtiyaç</span><span lang="en">Need</span> 1</p><p class="stat-n"><span lang="tr">Erişim</span><span lang="en">Access</span></p><p><span lang="tr">Bu bakışa ulaşmanın yolu bugün çoğunlukla yüksek lisans programlarından geçiyor. Lisans öğrencisinin, çalışan bir tasarımcının ya da yalnızca merak eden birinin ulaşabileceği bir karşılığı yok.</span><span lang="en">Today the path to this perspective mostly runs through master’s programmes. There is no equivalent an undergraduate, a working designer or simply a curious person can reach.</span></p></div><div class="pr-s"><p class="mini"><span lang="tr">Çözüm</span><span lang="en">Solution</span> 1</p><p><span lang="tr">Herkesin bulunduğu yerden başlayabildiği, teknolojiyi insan için çalışan bir araç olarak öğreten modüler bir platform.</span><span lang="en">A modular platform where everyone can start from where they are, teaching technology as a tool that works for people.</span></p></div></div>
+    <div class="pr"><div class="pr-n">2</div><div class="pr-p"><p class="mini"><span lang="tr">İhtiyaç</span><span lang="en">Need</span> 2</p><p class="stat-n"><span lang="tr">Özgüven</span><span lang="en">Confidence</span></p><p><span lang="tr">Dört yıldır çoğunlukla kadın öğrencilerle çalışıyorum. Kalıbı, malzemeyi ve üretimi çok iyi bilen kadınlar, konu dijital araçlara gelince daha denemeden kendilerini yetersiz hissedebiliyor.</span><span lang="en">For four years I’ve mostly taught women. Women who know pattern-making, materials and production very well can feel inadequate with digital tools before they even try.</span></p></div><div class="pr-s"><p class="mini"><span lang="tr">Çözüm</span><span lang="en">Solution</span> 2</p><p><span lang="tr">Teknolojiyi tasarım sezgisi üzerinden anlaşılır kılan, “ben yapamam” eşiğini kıran ve rol model sunan bir eğitim.</span><span lang="en">Education that makes technology understandable through design intuition, breaks the “I can’t” threshold and offers role models.</span></p></div></div>
+    <div class="pr"><div class="pr-n">3</div><div class="pr-p"><p class="mini"><span lang="tr">İhtiyaç</span><span lang="en">Need</span> 3</p><p class="stat-n"><span lang="tr">%18 → %30</span><span lang="en">18% → 30%</span></p><p><span lang="tr">Z ve Y kuşağında yapay zekâyla yapılmış reklamlara olumsuz bakanların oranı, 2024’ten 2026’ya. İnsanlar insan emeğini görmek istiyor.</span><span lang="en">Gen Z and Millennials who view AI-made ads negatively, 2024 to 2026. People want to see human work.</span></p><p class="src"><a href="https://www.inc.com/sadiya-kherani/prada-hand-drawn-campaign-anti-ai-slop-luxury-strategy/91426507" target="_blank" rel="noopener">IAB / Inc.</a></p></div><div class="pr-s"><p class="mini"><span lang="tr">Çözüm</span><span lang="en">Solution</span> 3</p><p><span lang="tr">Öğrencilerin yapay zekâyı kod yazan bir asistan olarak kullanmayı, fikir ve tasarım kararlarını ise kendileri vermeyi öğrendiği bir eğitim.</span><span lang="en">Education where students learn to use AI as a coding assistant while making the ideas and design decisions themselves.</span></p></div></div>
+    <div class="pr"><div class="pr-n">4</div><div class="pr-p"><p class="mini"><span lang="tr">İhtiyaç</span><span lang="en">Need</span> 4</p><p class="stat-n"><span lang="tr">1 kamyon / saniye</span><span lang="en">1 truck / second</span></p><p><span lang="tr">Her saniye bir kamyon dolusu tekstil çöpe ya da yakmaya gidiyor.</span><span lang="en">Every second a truckload of textiles is landfilled or burned.</span></p><p class="src"><a href="https://news.un.org/en/story/2019/03/1035161" target="_blank" rel="noopener"><span lang="tr">BM</span><span lang="en">UN</span></a></p></div><div class="pr-s"><p class="mini"><span lang="tr">Çözüm</span><span lang="en">Solution</span> 4</p><p><span lang="tr">Kıyafeti dikmeden önce bilgisayarda deneyip doğrulamayı öğreten bir eğitim; böylece denemek için dikilen fiziksel örnekler ve atık azalıyor.</span><span lang="en">Education that teaches testing a garment on the computer before it is sewn, so fewer physical trial samples and less waste.</span></p></div></div>
+  </div>
+  <div class="counter" aria-live="off">
+    <p class="mute"><span lang="tr">Bu sayfayı açtığınızdan beri dünyada oluşan tekstil atığı:</span><span lang="en">Textile waste created worldwide since you opened this page:</span></p>
+    <p class="counter-n"><span id="tex-counter">0</span> <span lang="tr">ton</span><span lang="en">tonnes</span></p>
+    <p class="src"><span lang="tr">Neden tekstil? Dijital prototiplemeyi en çok moda ve tekstil öğrencilerine öğretiyorum; burada dijitalde verilen bir karar doğrudan kumaş tasarrufuna dönüşüyor. </span><span lang="en">Why textiles? I teach digital prototyping most to fashion and textile students; here a decision made digitally turns directly into fabric saved. </span><span lang="tr">Yılda yaklaşık 92 milyon ton tekstil atığı üzerinden hesaplanır</span><span lang="en">Calculated from roughly 92 million tonnes of textile waste a year</span> (<a href="https://news.mit.edu/2025/refashion-software-designs-eco-friendly-clothing-that-can-reassemble-new-items-1017" target="_blank" rel="noopener">MIT News</a>).</p>
+  </div>
+</section>
+<section class="page" id="fayda" aria-labelledby="h-fayda">
+  <p class="kicker"><span lang="tr">/ 01 // PROJEM</span><span lang="en">/ 01 // MY PROJECT</span></p>
+  <h2 id="h-fayda"><span lang="tr">Topluma katkısı</span><span lang="en">Social impact</span></h2>
+  <div class="scroll-x"><table><thead><tr><th scope="col"><span lang="tr">Alan</span><span lang="en">Area</span></th><th scope="col"><span lang="tr">Ne değişiyor</span><span lang="en">What changes</span></th><th scope="col"><span lang="tr">Nasıl ölçülür</span><span lang="en">How it’s measured</span></th></tr></thead><tbody>
+<tr><td><span lang="tr"><b>Erişilebilir eğitim</b></span><span lang="en"><b>Accessible education</b></span></td><td><span lang="tr">Tek bir programa ya da kuruma bağlı kalmadan, kişi yalnızca ihtiyaç duyduğu dersi seçebiliyor.</span><span lang="en">Without depending on a single programme or institution, people choose only the courses they need.</span></td><td><span lang="tr">Öğrenci sayısı, burslu koltuk</span><span lang="en">Students, scholarship seats</span></td></tr>
+<tr><td><span lang="tr"><b>Kadınlar ve teknoloji</b></span><span lang="en"><b>Women and technology</b></span></td><td><span lang="tr">Kendini teknolojiye uzak hisseden kadınlar rol model görüyor, özgüven kazanıyor ve bu alanda kendine yer açıyor.</span><span lang="en">Women who feel distant from technology see role models, gain confidence and make room for themselves in it.</span></td><td><span lang="tr">Kadın öğrenci oranı, ders öncesi ve sonrası özgüven anketi</span><span lang="en">Share of women, before/after confidence survey</span></td></tr>
+<tr><td><span lang="tr"><b>Kapsayıcılık</b></span><span lang="en"><b>Inclusion</b></span></td><td><span lang="tr">Karşımdakinin bildiği yerden başlayıp yeni bilgiyi onunla ilişkilendirerek anlatıyorum. Mentörümle buna analitik empati dedik.</span><span lang="en">I start from what the other person already knows and connect new knowledge to it. My mentor and I called this analytical empathy.</span></td><td><span lang="tr">Ders sonu geri bildirimleri, ulaşılan ülke sayısı</span><span lang="en">End-of-course feedback, countries reached</span></td></tr>
+<tr><td><span lang="tr"><b>Bilinçli üretim</b></span><span lang="en"><b>Conscious making</b></span></td><td><span lang="tr">Tasarımcı fikrini önce bilgisayarda deneyip doğruladığı için, denemek için dikilen fiziksel örnekler ve atık azalıyor.</span><span lang="en">Designers test ideas digitally first, so physical trials and waste decrease.</span></td><td><span lang="tr">Derslerde önlenen fiziksel numune</span><span lang="en">Physical samples avoided in courses</span></td></tr>
+</tbody></table></div>
+</section>
+<section class="page" id="etki" aria-labelledby="h-etki">
+  <p class="kicker"><span lang="tr">/ 01 // PROJEM</span><span lang="en">/ 01 // MY PROJECT</span></p>
+  <h2 id="h-etki"><span lang="tr">Bilinçli üretim: etkisi</span><span lang="en">Conscious making: the impact</span></h2>
+  <p class="lede"><span lang="tr">Dijital prototipleme, bir kıyafeti dikmeden önce bilgisayarda üç boyutlu olarak tasarlamak ve kumaşın gerçek fiziksel özellikleriyle nasıl duracağını görmek demek. Modada bir tasarım genellikle her beden için ve her düzeltmede yeniden dikilerek denenir; bu denemelere numune denir. Tasarımcı fikrini önce bilgisayarda deneyip doğruladığında bu numunelere daha az ihtiyaç duyuluyor. Dijital prototipleme yazılımı Browzwear’ı kullanan markalar numune sayısında %50–100 azalma bildiriyor; spor giyim markası Odlo numune yatırımını %70 azalttı (<a href="https://www.casestudies.com/company/browzwear/case-study/odlo-cuts-sample-investment-by-70-with-browzwear" target="_blank" rel="noopener">Odlo</a>). Aynı mantık mobilyadan iç mekâna, dokuyla çalışan her alanda geçerli.</span><span lang="en">Digital prototyping means designing a garment in 3D on the computer before it is sewn, and seeing how it behaves with the real physical properties of the fabric. In fashion a design is usually sewn again for every size and every correction to test it; these trials are called samples. When designers test and confirm ideas on the computer first, fewer samples are needed. Brands using the digital prototyping software Browzwear report 50–100% fewer samples; sportswear brand Odlo cut its sample investment by 70% (<a href="https://www.casestudies.com/company/browzwear/case-study/odlo-cuts-sample-investment-by-70-with-browzwear" target="_blank" rel="noopener">Odlo</a>). The same logic applies to furniture, interiors and every field that works with material.</span></p>
+  <div class="eiffel">
+    <div>
+      <p class="stat-n">39.000 <span lang="tr">ton</span><span lang="en">t</span></p>
+      <p><span lang="tr">Şili’de Atacama Çölü’ne her yıl bırakılan, satılamayan giysi.</span><span lang="en">Unsold clothing left in Chile’s Atacama Desert every year.</span> <span class="src"><a href="https://english.aawsat.com/home/article/3296286/chiles-desert-dumping-ground-fast-fashion-leftovers?page=1" target="_blank" rel="noopener">AFP</a></span></p>
+      <div class="towers" role="img" aria-label="≈ 3.9 Eiffel Towers"><svg class="tower" viewBox="0 0 40 80" aria-hidden="true"><path d="M20 2 L22 20 L26 44 L34 78 L26 78 L20 58 L14 78 L6 78 L14 44 L18 20 Z M15 44 L25 44 M13 52 L27 52" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><svg class="tower" viewBox="0 0 40 80" aria-hidden="true"><path d="M20 2 L22 20 L26 44 L34 78 L26 78 L20 58 L14 78 L6 78 L14 44 L18 20 Z M15 44 L25 44 M13 52 L27 52" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><svg class="tower" viewBox="0 0 40 80" aria-hidden="true"><path d="M20 2 L22 20 L26 44 L34 78 L26 78 L20 58 L14 78 L6 78 L14 44 L18 20 Z M15 44 L25 44 M13 52 L27 52" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span class="tower-part"><svg class="tower" viewBox="0 0 40 80" aria-hidden="true"><path d="M20 2 L22 20 L26 44 L34 78 L26 78 L20 58 L14 78 L6 78 L14 44 L18 20 Z M15 44 L25 44 M13 52 L27 52" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span></div>
+      <p class="mute"><span lang="tr">≈ her yıl 3,9 Eyfel Kulesi ağırlığında</span><span lang="en">≈ the weight of 3.9 Eiffel Towers every year</span></p>
+    </div>
+    <div>
+      <p class="stat-n">≈ 25</p>
+      <p><span lang="tr">Dünyada her gün oluşan tekstil atığının Eyfel Kulesi cinsinden karşılığı (yılda ~92 milyon ton).</span><span lang="en">The world’s daily textile waste, measured in Eiffel Towers (~92 million tonnes a year).</span> <span class="src"><a href="https://news.mit.edu/2025/refashion-software-designs-eco-friendly-clothing-that-can-reassemble-new-items-1017" target="_blank" rel="noopener">MIT News</a></span></p>
+      <p class="mute"><span lang="tr">Eyfel Kulesi’nin toplam ağırlığı: 10.100 ton</span><span lang="en">Total weight of the Eiffel Tower: 10,100 tonnes</span> (<a href="https://www.toureiffel.paris/en/the-monument/key-figures" target="_blank" rel="noopener">Tour Eiffel</a>)</p>
+    </div>
+  </div>
+
+    <div class="calc">
+    <h3><span lang="tr">Bir koleksiyonda dijital prototipleme kaç numuneyi önler?</span><span lang="en">How many samples does digital prototyping prevent in a collection?</span></h3>
+    <div class="calc-grid">
+      <div class="calc-in">
+        <div class="row"><label for="c-des"><span lang="tr">Yıllık tasarım sayısı</span><span lang="en">Designs per year</span></label><output id="c-des-o">100</output><input id="c-des" type="range" min="10" max="500" step="10" value="100" data-unit=""></div>
+        <div class="row"><label for="c-size"><span lang="tr">Beden sayısı (XS–XL = 5)</span><span lang="en">Number of sizes (XS–XL = 5)</span></label><output id="c-size-o">5</output><input id="c-size" type="range" min="1" max="7" step="1" value="5" data-unit=""></div>
+        <div class="row"><label for="c-rev"><span lang="tr">Revizyon turu</span><span lang="en">Revision rounds</span></label><output id="c-rev-o">3</output><input id="c-rev" type="range" min="1" max="5" step="1" value="3" data-unit=""></div>
+        <div class="row"><label for="c-m"><span lang="tr">Numune başına kumaş (m)</span><span lang="en">Fabric per sample (m)</span></label><output id="c-m-o">2</output><input id="c-m" type="range" min="0.5" max="5" step="0.5" value="2" data-unit=""></div>
+        <div class="row"><label for="c-pct"><span lang="tr">Dijitale taşınan numune oranı</span><span lang="en">Share of samples moved to digital</span></label><output id="c-pct-o">70%</output><input id="c-pct" type="range" min="50" max="100" step="5" value="70" data-unit="%"></div>
+      </div>
+      <div class="calc-out">
+        <p class="mute"><span lang="tr">Fiziksel numune</span><span lang="en">Physical samples</span></p><p class="stat-n" id="c-total">1.500</p>
+        <p class="mute"><span lang="tr">Önlenen numune</span><span lang="en">Samples prevented</span></p><p class="stat-n" id="c-saved">1.050</p>
+        <p class="mute"><span lang="tr">Önlenen kumaş</span><span lang="en">Fabric saved</span></p><p class="stat-n"><span id="c-fab">2.100</span> m</p>
+      </div>
+    </div>
+    <p class="src"><span lang="tr">Hesap: tasarım × beden × revizyon = fiziksel numune; × dijital oran = önlenen numune; × metre = önlenen kumaş. Varsayılan %70 Odlo vakasından; Browzwear müşterileri %50–100 bildiriyor.</span><span lang="en">Formula: designs × sizes × revisions = physical samples; × digital share = samples prevented; × metres = fabric saved. The 70% default comes from the Odlo case; Browzwear customers report 50–100%.</span> <a href="https://www.casestudies.com/company/browzwear/case-study/odlo-cuts-sample-investment-by-70-with-browzwear" target="_blank" rel="noopener">Odlo</a>, <a href="https://browzwear.com/request-a-demo" target="_blank" rel="noopener">Browzwear</a></p>
+  </div>
+
+</section>
+<section class="page" id="ben" aria-labelledby="h-ben">
+  <p class="kicker"><span lang="tr">/ 02 // BU FIKRE NASIL ULAŞTIM</span><span lang="en">/ 02 // HOW I ARRIVED AT IT</span></p>
+  <h2 id="h-ben"><span lang="tr">Ben kimim</span><span lang="en">Who I am</span></h2>
+  <p class="lede"><span lang="tr">Gördüğüm her şeyi emen bir süngerim; içimde de bunu eleştirel düşünce ve insan faktörüyle işleyen bir motor var. Yıllar içinde dallanıp budaklanan bu birikim artık içime sığmıyor.</span><span lang="en">I’m a sponge that absorbs everything I see, with an engine inside that processes it through critical thinking and the human factor. Over the years this has branched out so much that it no longer fits inside me.</span></p>
+  <div class="numstrip"><div><p class="stat-n">4</p><p class="mute"><span lang="tr">yıl eğitmenlik</span><span lang="en">years teaching</span></p></div><div><p class="stat-n">2</p><p class="mute"><span lang="tr">okul</span><span lang="en">schools</span></p></div><div><p class="stat-n">3</p><p class="mute"><span lang="tr">kendi sınıfım</span><span lang="en">classes of my own</span></p></div><div><p class="stat-n">10</p><p class="mute"><span lang="tr">aktif öğrenci</span><span lang="en">active students</span></p></div><div><p class="stat-n">93</p><p class="mute"><span lang="tr">aylık IDE arşivi</span><span lang="en">months of IDE files</span></p></div></div>
+  <div class="cols">
+    <div><h3><span lang="tr">Eğitimim</span><span lang="en">My education</span></h3><p><span lang="tr">Işık Üniversitesi Görsel İletişim Tasarımı, 2018; tam burslu, onur derecesiyle. Veri görselleştirme, oyun tasarımı, 3D ve hareketli grafik ağırlıklı bir eğitim; seçmeli olarak taş baskı gibi fiziksel dersler.</span><span lang="en">Işık University, Visual Communication Design, 2018; full scholarship, honours. A computational education in data visualisation, game design, 3D and motion, with physical electives such as lithography.</span></p></div>
+    <div><h3><span lang="tr">Eğitmenliğim</span><span lang="en">My teaching</span></h3><p><span lang="tr">Dört yıldır IFA Paris İstanbul ve ESMOD İstanbul’da ders veriyorum; dijital prototipleme dersini iki okula da ben önerdim. Okullardan bağımsız kendi sınıflarım ve portfolyo mentorluğum var; başka okullarda da konuşmalar yapıyorum.</span><span lang="en">Four years teaching at IFA Paris Istanbul and ESMOD Istanbul; I proposed the digital prototyping course at both. I run my own classes and portfolio mentoring outside the schools, and give talks at other schools.</span></p></div>
+    <div><h3><span lang="tr">Pratiğim</span><span lang="en">My practice</span></h3><p><span lang="tr">On iki yılı aşkın bilgisayar grafiği: grafik, hareketli görüntü, arayüz, front-end, yaratıcı kodlama, 3D, ses ve ışık. Mimarlar, malzeme ve tekstil mühendisleriyle çalıştım; bir sanatçı rezidansında doğadaki büyümenin matematiğini kodla forma, 3D baskıyla kumaşa dönüştürdüm.</span><span lang="en">Over twelve years of computer graphics: graphic, motion, interface, front-end, creative coding, 3D, sound and light. I’ve worked with architects and material and textile engineers; in an artist residency I turned the maths of natural growth into form with code, and into fabric with 3D printing.</span></p></div>
+    <div><h3><span lang="tr">Öğretme biçimim</span><span lang="en">How I teach</span></h3><p><span lang="tr">Mentörümle buna “analitik empati” dedik: karmaşık teknik bilgiyi terimleri açıklayarak, kapı bekçiliği yapmadan anlatmak. Öğrencilerimden en sık duyduğum cümle: “Ne ara bu kadar şey öğrendik?”</span><span lang="en">My mentor and I called it “analytical empathy”: explaining complex technical knowledge term by term, without gatekeeping. What I hear most from students: “When did we learn all this?”</span></p></div>
+  </div>
+</section>
+<section class="page" id="vaka1" aria-labelledby="h-vaka1">
+  <p class="kicker"><span lang="tr">/ 02 // BU FIKRE NASIL ULAŞTIM</span><span lang="en">/ 02 // HOW I ARRIVED AT IT</span></p>
+  <h2 id="h-vaka1">Case Study 1: Normal Map Generator</h2>
+  <p class="lede"><span lang="tr">Bu araç, Fashion Tech 2 / AI Generative Design dersim için yaptığım örnek proje. Dersin müfredatı Paris’ten geliyor; içeriği değiştirme hakkımızı, öğrencilere en fazla verimi sağlayacak ve düşünme biçimlerini etkileyecek şekilde kendi yaklaşımıma göre kullandım.</span><span lang="en">This tool is the example project I built for my Fashion Tech 2 / AI Generative Design course. The curriculum comes from Paris; I used our right to adapt it according to my own approach, to give students the most and to shape how they think.</span></p>
+  <div class="cols">
+    <div><h3><span lang="tr">Soru</span><span lang="en">The question</span></h3><p><span lang="tr">Öğrencilerime şunu sordum: gerçek hayatta dokunduğumuz, fiziki bir harita gibi duran bir dokuyu 3D modellemede yeniden üç boyutlu bir doku olarak nasıl dijitalleştiririz? Bilgisayarın okuyabileceği dile nasıl çeviririz? Normal map tam olarak bunu yapıyor: insan gözünün algıladığı dokuyu bilgisayarın algılayabildiği bir haritaya çeviriyor.</span><span lang="en">I asked my students: how do we digitise a texture we touch in real life, one that sits like a physical map, as a three-dimensional texture again in 3D modelling? How do we translate it into a language the computer can read? That is exactly what a normal map does: it turns the texture the human eye perceives into a map the computer can perceive.</span></p></div>
+    <div><h3><span lang="tr">Yapay zekâ: yaratıcı değil, yazılımcı</span><span lang="en">AI: a coder, not a creator</span></h3><p><span lang="tr">Yapay zekâ başkalarının emeğiyle, izinsiz eğitildi; yaratıcı kısımda kullanmak bu yüzden etik değil. Dersi, öğrencilerin yapay zekâyı yazılımcı bir asistan olarak kullandığı bir derse çevirdim. Kuralımız netti: bir ana prompt, iki revizyon, toplam üç hak, çünkü her prompt su ve enerji harcıyor. Akıllarına geleni tek tek göndermek yerine, düşünüp tek bir düzgün cümleyle brief vermeyi öğrendiler.</span><span lang="en">AI was trained on other people’s work without consent, so using it for the creative part isn’t ethical. I turned the course into one where students use AI as a coding assistant. The rule was clear: one main prompt and two revisions, three in total, because every prompt uses water and energy. Instead of firing off every passing thought, they learned to think first and write one proper brief.</span></p></div>
+    <div><h3><span lang="tr">Hata değil, iletişim</span><span lang="en">Not an error, a conversation</span></h3><p><span lang="tr">Tasarımın temel süreci olan brief’i yapay zekâya nasıl uygulayacaklarını anlattım: arayüzün responsive olması, temel front-end dilleri, hareket ve etkileşim için JavaScript. Ve şunu söyledim: tasarım istediğimiz gibi olmuyorsa, bilgisayara bir şey söylemeyi unutmuşuzdur. Doğduğumuzdan beri konuştuğumuz ana dilimizde bile kendimizi anlatırken hata yapıyorsak, bambaşka bir dil konuşan bilgisayarla iletişimin zaman alması çok normal. Amacım, hata sandıkları şeyin bir iletişim aksaklığı olduğunu görmeleri ve ön yargının kırılmasıydı.</span><span lang="en">I showed them how to apply briefing, the core process of design, to AI: a responsive interface, the basic front-end languages, JavaScript for motion and interaction. And I told them: if the design isn’t turning out as we want, we forgot to tell the computer something. If we make mistakes expressing ourselves even in the mother tongue we’ve spoken since birth, it’s natural that talking to a computer, which speaks an entirely different language, takes time. My aim was for them to see that what they call an error is a breakdown in communication, and for the prejudice to break.</span></p></div>
+    <div><h3><span lang="tr">GitHub ile tam bir döngü</span><span lang="en">Full circle with GitHub</span></h3><p><span lang="tr">Son aşamada her öğrenci GitHub hesabı açtı. Tasarım öğrencilerinin neredeyse hiç kullanmadığı, yazılımcıların kodlarını ücretsiz yayınladığı bu platformdaki yazılımların da bizim tasarım yazılımlarımız gibi araçlar olduğunu gösterdim. Projelerini bana GitHub linkiyle teslim ettiler; tam da bu sunumu size teslim ettiğim gibi. Balık vermek değil, balık tutmayı öğretmek.</span><span lang="en">In the final stage every student opened a GitHub account. I showed them that the software on this platform, where developers publish code for free and design students almost never go, is a set of tools just like our design software. They submitted their projects to me as GitHub links, exactly the way I am submitting this presentation to you. Not giving fish, but teaching how to fish.</span></p></div>
+  </div>
+  <!-- TODO: embed the Normal Map Generator here with short how-to steps once the HTML file arrives -->
+</section>
+<section class="page" id="sektor" aria-labelledby="h-sektor">
+  <p class="kicker"><span lang="tr">/ 02 // BU FIKRE NASIL ULAŞTIM</span><span lang="en">/ 02 // HOW I ARRIVED AT IT</span></p>
+  <h2 id="h-sektor"><span lang="tr">Sektör nereye gidiyor</span><span lang="en">Where the industry is heading</span></h2>
+  <p class="lede"><span lang="tr">İki hareket aynı anda yaşanıyor: yapay zekâ ucuz iş gücünün yerini alırken, markalar ve tasarımcılar insan emeğini yeniden görünür kılıyor ve teknolojiyi kimliklerine katıyor.</span><span lang="en">Two movements are happening at once: AI is replacing cheap labour, while brands and designers make human work visible again and bring technology into their identity.</span></p>
+  <ul class="plain"><li><</li><li><</li><li><</li></ul>
+  <p class="mute"><span lang="tr">Ben de yapay zekâya karşı değilim; onu kod yazan bir asistan olarak kullanıyorum, fikir ve tasarım kararını ise tasarımcıya bırakıyorum.</span><span lang="en">I’m not against AI either; I use it as a coding assistant and leave the ideas and design decisions to the designer.</span></p>
+</section>
+<section class="page" id="ogrenciler" aria-labelledby="h-ogrenciler">
+  <p class="kicker"><span lang="tr">/ 02 // BU FIKRE NASIL ULAŞTIM</span><span lang="en">/ 02 // HOW I ARRIVED AT IT</span></p>
+  <h2 id="h-ogrenciler"><span lang="tr">Öğrencilerden</span><span lang="en">From students</span></h2>
+
+  <div class="cols">
+    <div><h3><span lang="tr">Kendi dantelini üretti</span><span lang="en">Made her own lace</span></h3><p><span lang="tr">Gulchekhra, kendi moda markası olan bir öğrencim. Öğretilmediği hâlde Substance Sampler’da sıfırdan kendi dantelini üretip VStitcher projesinde kullandı; şimdi şirketindeki kadınlara bu teknolojileri öğretiyor.</span><span lang="en">Gulchekhra, a student with her own fashion brand, made her own lace from scratch in Substance Sampler without being taught it and used it in VStitcher; she now teaches these tools to the women in her company.</span></p></div>
+    <div><h3><span lang="tr">Sıfır atıkla mezun oldu</span><span lang="en">Graduated with zero waste</span></h3><p><span lang="tr">Liza başta “yapamam” diyordu. İstenmediği hâlde mezuniyet koleksiyonunun tamamını dijitalde prototipleyip sıfır atık üretime taşıdı.</span><span lang="en">Liza started out saying “I can’t.” Without being asked, she prototyped her entire graduation collection digitally and took it to zero-waste production.</span></p></div>
+    <div><h3><span lang="tr">Bakış açısı</span><span lang="en">A way of seeing</span></h3><p><span lang="tr">Tansa’yla araç değil, portfolyo, konsept ve görsel okuma üzerine çalışıyoruz; İngiltere’de yüksek lisansa hazırlanıyor.</span><span lang="en">With Tansa I work not on tools but on portfolio, concept and visual reading; she is preparing for a master’s in the UK.</span></p></div>
+  </div>
+</section>
+<section class="page" id="shes" aria-labelledby="h-shes">
+  <p class="kicker"><span lang="tr">/ 02 // BU FIKRE NASIL ULAŞTIM</span><span lang="en">/ 02 // HOW I ARRIVED AT IT</span></p>
+  <h2 id="h-shes"><span lang="tr">She’s Mentoring ile nereden nereye</span><span lang="en">From where to where with She’s Mentoring</span></h2>
+  <p class="lede"><span lang="tr">Programdan önce danışabileceğim kimse yoktu; artık bir planım ve bir yol arkadaşım var.</span><span lang="en">Before the programme I had no one to ask; now I have a plan and a companion on the way.</span></p>
+  <div class="scroll-x"><table><thead><tr><th scope="col"><span lang="tr">Önce</span><span lang="en">Before</span></th><th scope="col"><span lang="tr">Şimdi</span><span lang="en">Now</span></th></tr></thead><tbody>
+<tr><td><span lang="tr">Projem “Dijital Prototipleme & Zanaat Yetenek Ağı”ydı: B2B odaklı, moda pilot sektör, yoğun jargon</span><span lang="en">My project was “Digital Prototyping & Craft Talent Network”: B2B-led, fashion as the pilot sector, heavy jargon</span> (<a href="https://aysatik.github.io/mercedes/" target="_blank" rel="noopener"><span lang="tr">başvuru sunumu</span><span lang="en">application presentation</span></a>)</td><td><span lang="tr">İnsan ve teknoloji etkileşimine odaklanan, kendi dilimle anlattığım bir eğitim platformu</span><span lang="en">An education platform focused on human–technology interaction, told in my own words</span></td></tr>
+<tr><td><span lang="tr">Önümde örnek, danışabileceğim kimse yoktu</span><span lang="en">I had no example to follow and no one to ask</span></td><td><span lang="tr">Şebnem Işık Ersoy ile 5 aydır birebir çalışıyorum</span><span lang="en">I have worked one-to-one with Şebnem Işık Ersoy for five months</span></td></tr>
+<tr><td><span lang="tr">Kendimi saatlik çalışan bir hoca olarak tanımlıyordum</span><span lang="en">I described myself as an hourly-paid teacher</span></td><td><span lang="tr">İnsan ve teknoloji etkileşimi alanında kendi platformunu kuran eğitmen ve tasarımcıyım</span><span lang="en">I am an educator and designer building my own platform in human–technology interaction</span></td></tr>
+<tr><td><span lang="tr">Güçlü yanımı tarif edemiyordum</span><span lang="en">I couldn’t describe my strength</span></td><td><span lang="tr">Analitik empati</span><span lang="en">Analytical empathy</span></td></tr>
+<tr><td><span lang="tr">Görünürlük fikri belirsizdi</span><span lang="en">Visibility was vague</span></td><td><span lang="tr">Podcast fikri mentorluk görüşmelerinde doğdu; ilk bölüm kaydedildi</span><span lang="en">The podcast idea came out of mentoring sessions; the first episode is recorded</span></td></tr>
+<tr><td><span lang="tr">Fikirler vardı, iş planı yoktu</span><span lang="en">I had ideas but no business plan</span></td><td><span lang="tr">Gelir modeli, bütçe ve yol haritası net</span><span lang="en">Revenue model, budget and roadmap are clear</span></td></tr>
+<tr><td><span lang="tr">Başvuruda PDF yerine bir web sitesi gönderdim</span><span lang="en">I sent a website instead of a PDF with my application</span></td><td><span lang="tr">Bu final aynı yolun beş ay sonraki hali</span><span lang="en">This final is the same path, five months on</span></td></tr>
+</tbody></table></div>
+
+  <div class="cols">
+    <div><h3><span lang="tr">Herkes için olmamak</span><span lang="en">Not being for everyone</span></h3><p><span lang="tr">Başta nişleşmeyi ve kitlemi daraltmayı olumsuz bir şey olarak görüyordum. She’s Mentoring’de Özlem Güsar’ın konuşması bunu değiştirdi: OGGUSTO’yu belli bir zevke sahip bir kitle için, bilerek, herkese hitap etmeye çalışmadan ve clickbait’e başvurmadan kurduğunu anlatmıştı. Oradan sonra anladım: herkese hitap etmeye çalışırsam asıl kitlemi yakalayamam. Bunu mentörümle de uzun uzun konuştuk.</span><span lang="en">At first I saw specialising and narrowing my audience as a negative. A talk by Özlem Güsar at She’s Mentoring changed that: she described building OGGUSTO deliberately for an audience with a particular taste, never trying to appeal to everyone and never using clickbait. That’s when I understood that if I try to speak to everyone, I won’t reach the audience I’m really for. I talked this through at length with my mentor too.</span></p></div>
+    <div><h3><span lang="tr">İç onaydan rehberliğe</span><span lang="en">From inner approval to guidance</span></h3><p><span lang="tr">Tasarımcı olmamı istemeyen, bu alandan kimsenin olmadığı bir aileden geliyorum. Farklılıklarımı hiçbir zaman zayıflık olarak görmedim; buraya kadar tanıdık olmadan, maddi destek almadan, kendi iç onayımla geldim. Ama girişimcilik gibi bir alanda yol gösterecek birine ihtiyacım vardı. Programın zamanlaması ve mentörümle eşleşmem tam da bu yüzden çok doğru oldu; kendim seçseydim bu kadar iyi seçemezdim.</span><span lang="en">I come from a family with no one in this field, who didn’t want me to become a designer. I never saw my differences as weaknesses; I got this far without connections or financial support, on my own inner approval. But in a field like entrepreneurship I needed someone to guide me. That’s why the timing of the programme and my match with my mentor were so right; I couldn’t have chosen better myself.</span></p></div>
+  </div>
+  <div class="qa">
+    <h3><span lang="tr">She’s Dreaming’den notlarım</span><span lang="en">My notes from She’s Dreaming</span></h3>
+    <p><span lang="tr">Programın parçası olan 11 She’s Dreaming buluşmasının hepsine katıldım; her birinde farklı bir sektör profesyoneli kendi alanını anlattı, ben de not aldım. 14 Mayıs’taki ilk notlarımdan bugüne taşıdıklarım:</span><span lang="en">I attended all 11 She’s Dreaming meetings that are part of the programme; at each one a professional from a different sector spoke about their field, and I took notes. What I carried from my first notes on 14 May to today:</span></p>
+    <ul class="plain">
+      <li><span lang="tr">Korkuya rağmen ilerlemek.</span><span lang="en">Moving forward despite fear.</span></li>
+      <li><span lang="tr">“Bilmiyorum” diyebilmenin rahatlığı.</span><span lang="en">The ease of being able to say “I don’t know.”</span></li>
+      <li><span lang="tr">Açığı görüp “bunu ben nasıl doldurabilirim?” diye yola çıkmak.</span><span lang="en">Seeing a gap and setting out by asking “how can I fill it?”</span></li>
+      <li><span lang="tr">Bunun bir topluluk ve bir kız kardeşlik olduğu.</span><span lang="en">That this is a community and a sisterhood.</span></li>
+    </ul>
+  </div>
+  <figure style="margin:0;max-width:62ch">
+    <blockquote class="quote" style="margin:0"><span lang="tr">“Mentim ile güzel bir yol yürüdük ve yürümeye de devam ediyoruz. Hedefine odaklanması, dağılmaması konusunda epey yol aldık. Projesini desteklemek için bir iş planı şarttı; bunun üzerinde epey çalıştık ve iyi bir iş planı oluşturdu.”</span><span lang="en">“My mentee and I have walked a good road together, and we keep walking. We made real progress on focusing on her goal and not scattering. A business plan was essential to support her project; we worked hard on it and she built a good one.”</span></blockquote>
+    <figcaption class="mute">Şebnem Işık Ersoy</figcaption>
+  </figure>
+</section>
+<section class="page" id="ozet" aria-labelledby="h-ozet">
+  <p class="kicker"><span lang="tr">/ 03 // NASIL HAYATA GEÇIRECEĞIM</span><span lang="en">/ 03 // HOW I’LL BRING IT TO LIFE</span></p>
+  <h2 id="h-ozet"><span lang="tr">İş planı tek sayfada</span><span lang="en">The business plan on one page</span></h2>
+  <div class="plan8"><div><h3><span lang="tr">İhtiyaç</span><span lang="en">Need</span></h3><p><span lang="tr">Teknolojiyi insan için ele alan bakış bugün çoğunlukla yüksek lisans programlarıyla sınırlı. Kendini dijital araçlara uzak hisseden tasarımcılar, özellikle kadınlar, daha denemeden geri çekiliyor.</span><span lang="en">The view of technology as something for people is mostly limited to master’s programmes. Designers who feel distant from digital tools, women especially, step back before trying.</span></p></div><div><h3><span lang="tr">Çözüm ve değer teklifi</span><span lang="en">Solution and value</span></h3><p><span lang="tr">Tasarım programlarını arkasındaki fizik ve matematik mantığıyla, insanı merkeze alan bir bakışla öğreten modüler, İngilizce, çevrim içi bir platform; yanında kardeş projesi IDE by AYS podcast’i.</span><span lang="en">A modular, English-language online platform teaching design programmes with the physics and maths behind them and a human-centred view; alongside it, the sister podcast IDE by AYS.</span></p></div><div><h3><span lang="tr">Hedef kitle</span><span lang="en">Audience</span></h3><p><span lang="tr">Tasarım öğrencileri, çalışan tasarımcılar, tasarıma geçmek isteyenler ve özellikle kadınlar; dünya genelinde.</span><span lang="en">Design students, working designers, people moving into design, and women in particular; worldwide.</span></p></div><div><h3><span lang="tr">Farklılaşma</span><span lang="en">Differentiation</span></h3><p><span lang="tr">Tek bir aracı değil, bir düşünme biçimini öğretiyor; sıfırdan ileri seviyeye kadar. Dört yıllık okul deneyimi ve hazır müfredat.</span><span lang="en">Teaches a way of thinking, not a single tool; from zero to advanced. Four years of school teaching and a ready curriculum.</span></p></div><div><h3><span lang="tr">Gelir modeli</span><span lang="en">Revenue model</span></h3><p><span lang="tr">Video modüller (pasif gelir); canlı dersler, mentorluk ve atölyeler (aktif gelir); kurumsal eğitim; okul dersleri sabit taban.</span><span lang="en">Video modules (passive); live classes, mentoring and workshops (active); corporate training; school teaching as a fixed base.</span></p></div><div><h3><span lang="tr">Yol haritası</span><span lang="en">Roadmap</span></h3><p><span lang="tr">1–2. ay altyapı ve çekim; 3–4. ay ilk modüller ve canlı program; 5–6. ay atölye ve tam çalışan platform; 6. aydan sonra Türkçe sürüm.</span><span lang="en">Months 1–2 setup and recording; 3–4 first modules and live programme; 5–6 workshop and a fully working platform; Turkish version after month 6.</span></p></div><div><h3><span lang="tr">Finansal kurgu</span><span lang="en">Financials</span></h3><p><span lang="tr">Ödülün 600.000 TL’si: ders yükünü azaltma 135.000, ekipman 159.000, yazılım lisansları 78.000, reklam 60.000, Ar-Ge malzemesi 55.000, çekim seti 45.000, altyapı 40.000, yedek 28.000.</span><span lang="en">Prize of 600,000 TL: reduced teaching load 135,000, equipment 159,000, software licences 78,000, advertising 60,000, R&amp;D materials 55,000, recording kit 45,000, infrastructure 40,000, contingency 28,000.</span></p></div><div><h3><span lang="tr">Kanıt</span><span lang="en">Evidence</span></h3><p><span lang="tr">4 yıl, 2 okul; iki okulda da benim önerdiğim dijital prototipleme dersleri; okullardan bağımsız 3 sınıf ve 10 öğrenci.</span><span lang="en">4 years, 2 schools; the digital prototyping courses I proposed at both; 3 classes and 10 students of my own.</span></p></div></div>
+</section>
+<section class="page" id="rekabet" aria-labelledby="h-rekabet">
+  <p class="kicker"><span lang="tr">/ 03 // NASIL HAYATA GEÇIRECEĞIM</span><span lang="en">/ 03 // HOW I’LL BRING IT TO LIFE</span></p>
+  <h2 id="h-rekabet"><span lang="tr">Benzer platformlar</span><span lang="en">Similar platforms</span></h2>
+  <p class="lede"><span lang="tr">Benzer platformlar ya tek bir yazılımı öğretiyor ya da temel eğitimi hazır varsayıyor. Ben aracı bir düşünme biçimiyle birlikte, sıfırdan ileri seviyeye anlatıyorum.</span><span lang="en">Similar platforms either teach a single piece of software or assume a foundation. I teach the tool together with a way of thinking, from zero to advanced.</span></p>
+  <div class="scroll-x"><table><thead><tr><th scope="col"><span lang="tr">Platform</span><span lang="en">Platform</span></th><th scope="col"><span lang="tr">Ne sunuyor</span><span lang="en">What it offers</span></th><th scope="col"><span lang="tr">Benim farkım</span><span lang="en">My difference</span></th></tr></thead><tbody>
+<tr><td>Design Morphine</td><td><span lang="tr">Hesaplamalı tasarımda tamamen çevrim içi eğitim ve yüksek lisans</span><span lang="en">Fully online computational design education and a master’s</span></td><td><span lang="tr">Sıfırdan başlayan biri de aynı platformda yer buluyor</span><span lang="en">Complete beginners have a place on the same platform</span></td></tr>
+<tr><td>Entagma</td><td><span lang="tr">Houdini ve Blender eğitimleri; yalnızca yazılım</span><span lang="en">Houdini and Blender tutorials; software only</span></td><td><span lang="tr">Aracı, mantığı ve başka alanlarla bağıyla birlikte öğretiyorum</span><span lang="en">I teach the tool with its logic and its links to other fields</span></td></tr>
+<tr><td><a href="https://okamirufu-s-school.teachable.com/courses/2706978" target="_blank" rel="noopener">Okamirufu Vizualizer</a></td><td><span lang="tr">TouchDesigner eğitimi ve topluluğu</span><span lang="en">TouchDesigner courses and community</span></td><td><span lang="tr">Tek bir araçla sınırlı değil: görsel iletişimden tekstile, mekândan ses ve ışığa</span><span lang="en">Not limited to one tool: from visual communication to textiles, space, sound and light</span></td></tr>
+<tr><td><span lang="tr">Araştırma laboratuvarları</span><span lang="en">Research labs</span></td><td><span lang="tr">İleri araştırma; temel eğitimi hazır varsayan lisansüstü programlar</span><span lang="en">Advanced research; graduate programmes that assume a foundation</span></td><td><span lang="tr">Temeli de veriyorum, araştırmaya da açılıyorum</span><span lang="en">I provide the foundation and open onto research</span></td></tr>
+<tr><td><span lang="tr">Üniversiteler</span><span lang="en">Universities</span></td><td><span lang="tr">Diploma ve ağ; tüm program tek paket</span><span lang="en">Degree and network; the whole programme as one package</span></td><td><span lang="tr">Modüler: ihtiyacın kadarını alırsın</span><span lang="en">Modular: take what you need</span></td></tr>
+</tbody></table></div>
+</section>
+<section class="page" id="swot" aria-labelledby="h-swot">
+  <p class="kicker"><span lang="tr">/ 03 // NASIL HAYATA GEÇIRECEĞIM</span><span lang="en">/ 03 // HOW I’LL BRING IT TO LIFE</span></p>
+  <h2 id="h-swot">SWOT</h2>
+<div class="swot"><div><p class="sw-k">S</p><h3><span lang="tr">Güçlü yanlar</span><span lang="en">Strengths</span></h3><ul class="plain"><li><span lang="tr">4 yıl, iki okulda eğitmenlik; dijital prototipleme derslerini iki okulda da kendim başlattım</span><span lang="en">Four years teaching at two schools; I launched the digital prototyping courses at both</span></li><li><span lang="tr">Tek kişide multidisipliner beceri: grafik, 3D, kod, front-end, video, müfredat</span><span lang="en">Multidisciplinary skills in one person: graphics, 3D, code, front-end, video, curriculum</span></li><li><span lang="tr">Hazır müfredat ve brief’ler; şu an 3 sınıfta 10 öğrenci</span><span lang="en">Ready curriculum and briefs; currently 10 students in 3 classes</span></li><li><span lang="tr">Uluslararası okul deneyimi ve öğrenci tanıklıkları</span><span lang="en">International school experience and student testimonials</span></li></ul></div><div><p class="sw-k">W</p><h3><span lang="tr">Zayıf yanlar ve önlemi</span><span lang="en">Weaknesses and response</span></h3><ul class="plain"><li><span lang="tr">Tek kişiye bağlı → video modüller ölçekliyor</span><span lang="en">Depends on one person → video modules scale</span></li><li><span lang="tr">On-demand dersler henüz yok; 36 saatlik bir ders ~72 saatlik iş → ödülle haftada 2 gün</span><span lang="en">No on-demand courses yet; a 36-hour course is ~72 hours of work → two days a week with the prize</span></li><li><span lang="tr">Beni tanımayan kitleye ulaşım → podcast, sosyal medya, öğrenci videoları</span><span lang="en">Reaching people who don’t know me → podcast, social media, student videos</span></li></ul></div><div><p class="sw-k">O</p><h3><span lang="tr">Fırsatlar</span><span lang="en">Opportunities</span></h3><ul class="plain"><li><span lang="tr">Modüler ve çevrim içi öğrenmeye artan ilgi</span><span lang="en">Growing interest in modular, online learning</span></li><li><span lang="tr">Sektör dijital prototiplemeye geçiyor</span><span lang="en">The industry is moving to digital prototyping</span></li><li><span lang="tr">Türkçe kaynak neredeyse yok: 6. aydan sonra açılacak ikinci pazar</span><span lang="en">Almost no Turkish resources: a second market from month 6</span></li><li><span lang="tr">İnsan elinden çıkan işe ve süreci görmeye artan ilgi</span><span lang="en">Growing interest in human-made work and seeing the process</span></li></ul></div><div><p class="sw-k">T</p><h3><span lang="tr">Tehditler ve önlemi</span><span lang="en">Threats and response</span></h3><ul class="plain"><li><span lang="tr">Kur ve lisans fiyatları → %5 yedek, açık kaynak alternatifler</span><span lang="en">Exchange rates and licence prices → 5% contingency, open-source alternatives</span></li><li><span lang="tr">Ücretsiz içerik bolluğu → içerik değil düşünme biçimi ve geri bildirim satılıyor</span><span lang="en">Abundant free content → what’s sold is a way of thinking and feedback, not just content</span></li><li><span lang="tr">“Yapay zekâ yapar, öğrenmeye gerek yok” algısı → mantığı öğreten eğitim</span><span lang="en">The idea that “AI will do it, no need to learn” → teaching that explains the logic</span></li></ul></div></div>
+</section>
+<section class="page" id="kanvas" aria-labelledby="h-kanvas">
+  <p class="kicker"><span lang="tr">/ 03 // NASIL HAYATA GEÇIRECEĞIM</span><span lang="en">/ 03 // HOW I’LL BRING IT TO LIFE</span></p>
+  <h2 id="h-kanvas">Business Model Canvas</h2>
+  <div class="scroll-x"><div class="bmc"><div class="b-kp"><h3><span lang="tr">Kilit ortaklar</span><span lang="en">Key partners</span></h3><ul class="plain"><li><span lang="tr">IFA Paris İstanbul, ESMOD İstanbul (okul ağı)</span><span lang="en">IFA Paris Istanbul, ESMOD Istanbul (school network)</span></li><li><span lang="tr">Podcast konukları</span><span lang="en">Podcast guests</span></li><li><span lang="tr">Hedef: yazılım şirketleri</span><span lang="en">Target: software companies</span></li></ul></div><div class="b-ka"><h3><span lang="tr">Kilit faaliyetler</span><span lang="en">Key activities</span></h3><ul class="plain"><li><span lang="tr">Müfredat tasarımı</span><span lang="en">Curriculum design</span></li><li><span lang="tr">Video modül üretimi</span><span lang="en">Video module production</span></li><li><span lang="tr">Canlı ders, atölye, mentorluk</span><span lang="en">Live classes, workshops, mentoring</span></li><li><span lang="tr">Ar-Ge ve içerik</span><span lang="en">R&amp;D and content</span></li></ul></div><div class="b-kr"><h3><span lang="tr">Kilit kaynaklar</span><span lang="en">Key resources</span></h3><ul class="plain"><li><span lang="tr">4 yıllık müfredat ve brief’ler</span><span lang="en">Four years of curriculum and briefs</span></li><li><span lang="tr">93 aylık IDE arşivi</span><span lang="en">93 months of IDE files</span></li><li><span lang="tr">Kendi araçlarım</span><span lang="en">My own tools</span></li><li><span lang="tr">Ödülle: ekipman ve lisanslar</span><span lang="en">With the prize: equipment and licences</span></li></ul></div><div class="b-vp"><h3><span lang="tr">Değer önerisi</span><span lang="en">Value proposition</span></h3><ul class="plain"><li><span lang="tr">Tasarım teknolojilerini bir düşünme biçimiyle birlikte öğretmek</span><span lang="en">Teaching design technologies together with a way of thinking</span></li><li><span lang="tr">Önce İngilizce, sonra Türkçe; modüler ve erişilebilir</span><span lang="en">English first, then Turkish; modular and accessible</span></li><li><span lang="tr">Sıfırdan ileri seviyeye</span><span lang="en">From zero to advanced</span></li></ul></div><div class="b-cr"><h3><span lang="tr">Müşteri ilişkileri</span><span lang="en">Customer relationships</span></h3><ul class="plain"><li><span lang="tr">Birebir geri bildirim ve mentorluk</span><span lang="en">One-to-one feedback and mentoring</span></li><li><span lang="tr">Topluluk, geri dönen öğrenci</span><span lang="en">Community, returning students</span></li></ul></div><div class="b-ch"><h3><span lang="tr">Kanallar</span><span lang="en">Channels</span></h3><ul class="plain"><li><span lang="tr">Platform sitesi</span><span lang="en">Platform site</span></li><li><span lang="tr">Instagram, IDE by AYS podcast</span><span lang="en">Instagram, IDE by AYS podcast</span></li><li><span lang="tr">Okul ağı, ücretsiz webinarlar</span><span lang="en">School network, free webinars</span></li></ul></div><div class="b-cs"><h3><span lang="tr">Müşteri segmentleri</span><span lang="en">Customer segments</span></h3><ul class="plain"><li><span lang="tr">Tasarım öğrencileri</span><span lang="en">Design students</span></li><li><span lang="tr">Kariyer değiştirenler</span><span lang="en">Career changers</span></li><li><span lang="tr">Çalışan tasarımcılar</span><span lang="en">Working designers</span></li><li><span lang="tr">İngilizcesi yetersiz meraklılar</span><span lang="en">Curious learners with limited English</span></li><li><span lang="tr">Okullar ve kurumlar</span><span lang="en">Schools and institutions</span></li></ul></div><div class="b-co"><h3><span lang="tr">Maliyet yapısı</span><span lang="en">Cost structure</span></h3><ul class="plain"><li><span lang="tr">Zaman: azaltılan ders yükü</span><span lang="en">Time: reduced teaching load</span></li><li><span lang="tr">Ekipman, lisanslar, platform altyapısı, reklam</span><span lang="en">Equipment, licences, platform infrastructure, advertising</span></li></ul></div><div class="b-rs"><h3><span lang="tr">Gelir akışları</span><span lang="en">Revenue streams</span></h3><ul class="plain"><li><span lang="tr">Video modüller (pasif)</span><span lang="en">Video modules (passive)</span></li><li><span lang="tr">Canlı ders, mentorluk, atölye (aktif)</span><span lang="en">Live classes, mentoring, workshops (active)</span></li><li><span lang="tr">Kurumsal eğitim; okul dersleri (sabit taban)</span><span lang="en">Corporate training; school teaching (fixed base)</span></li></ul></div></div></div>
+</section>
+<section class="page" id="gelir" aria-labelledby="h-gelir">
+  <p class="kicker"><span lang="tr">/ 03 // NASIL HAYATA GEÇIRECEĞIM</span><span lang="en">/ 03 // HOW I’LL BRING IT TO LIFE</span></p>
+  <h2 id="h-gelir"><span lang="tr">Gelir modeli</span><span lang="en">Revenue model</span></h2>
+  <p class="lede"><span lang="tr">Bireyler modül ve canlı ders için, kurumlar atölye ve müfredat desteği için ödüyor; okul dersleri sabit taban olarak sürüyor.</span><span lang="en">Individuals pay for modules and live classes, institutions for workshops and curriculum support; school teaching continues as a fixed base.</span></p>
+  <div class="scroll-x"><table><thead><tr><th scope="col"><span lang="tr">Gelir kalemi</span><span lang="en">Revenue stream</span></th><th scope="col"><span lang="tr">Kim öder</span><span lang="en">Who pays</span></th><th scope="col"><span lang="tr">Başlangıç</span><span lang="en">Starts</span></th></tr></thead><tbody>
+<tr><td><span lang="tr">Ücretsiz webinarlar (güven ve satış hunisi)</span><span lang="en">Free webinars (trust and sales funnel)</span></td><td>—</td><td><span lang="tr">1–2. ay</span><span lang="en">Month 1–2</span></td></tr>
+<tr><td><span lang="tr">Canlı dersler ve kısa programlar</span><span lang="en">Live classes and short programmes</span></td><td><span lang="tr">Bireyler</span><span lang="en">Individuals</span></td><td><span lang="tr">3. ay</span><span lang="en">Month 3</span></td></tr>
+<tr><td><span lang="tr">Kayıtlı video modüller</span><span lang="en">Recorded video modules</span></td><td><span lang="tr">Bireyler</span><span lang="en">Individuals</span></td><td><span lang="tr">3–4. ay</span><span lang="en">Month 3–4</span></td></tr>
+<tr><td><span lang="tr">Tasarım psikolojisi, tasarımcı yol haritası, konsept tasarımı, mentorluk</span><span lang="en">Design psychology, designer career roadmap, concept design, mentoring</span></td><td><span lang="tr">Bireyler</span><span lang="en">Individuals</span></td><td><span lang="tr">4. ay</span><span lang="en">Month 4</span></td></tr>
+<tr><td><span lang="tr">Atölyeler (lazer kesim, 3D baskı, biyomateryal)</span><span lang="en">Workshops (laser cutting, 3D printing, biomaterials)</span></td><td><span lang="tr">Bireyler, ekipler</span><span lang="en">Individuals, teams</span></td><td><span lang="tr">5–6. ay</span><span lang="en">Month 5–6</span></td></tr>
+<tr><td><span lang="tr">Kurumsal eğitim ve müfredat danışmanlığı</span><span lang="en">Corporate training and curriculum consulting</span></td><td><span lang="tr">Okullar, markalar</span><span lang="en">Schools, brands</span></td><td><span lang="tr">6. ay</span><span lang="en">Month 6</span></td></tr>
+<tr><td><span lang="tr">Okul dersleri (azaltılmış yük)</span><span lang="en">School teaching (reduced load)</span></td><td><span lang="tr">IFA Paris, ESMOD</span><span lang="en">IFA Paris, ESMOD</span></td><td><span lang="tr">Sürüyor; sabit taban</span><span lang="en">Ongoing; fixed base</span></td></tr>
+<tr><td><span lang="tr">Sponsorluk, iş birlikleri</span><span lang="en">Sponsorship, partnerships</span></td><td><span lang="tr">Markalar, yazılım firmaları</span><span lang="en">Brands, software firms</span></td><td><span lang="tr">12. ay sonrası</span><span lang="en">After month 12</span></td></tr>
+</tbody></table></div>
+  <div class="cols">
+    <div><h3><span lang="tr">Pasif gelir</span><span lang="en">Passive income</span></h3><p><span lang="tr">Video modüller bir kez üretilip tekrar tekrar satılıyor; saate bağlı olmayan gelir.</span><span lang="en">Video modules are made once and sold many times; income not tied to hours.</span></p></div>
+    <div><h3><span lang="tr">Geri dönen öğrenci</span><span lang="en">Returning students</span></h3><p><span lang="tr">Her eğitim başka alanlarla bağını gösterdiği için öğrenci bir sonraki modüle ilgi duyuyor.</span><span lang="en">Each course shows links to other fields, so students take an interest in the next module.</span></p></div>
+    <div><h3><span lang="tr">Neden okulu bırakmıyorum</span><span lang="en">Why I keep teaching at schools</span></h3><p><span lang="tr">Sektör bağı, yeni nesille birebir temas ve güncel kalmak için; ayrıca sabit gelir tabanı.</span><span lang="en">Industry ties, direct contact with new generations and staying current; also a fixed income base.</span></p></div>
+  </div>
+</section>
+<section class="page" id="pazarlama" aria-labelledby="h-pazarlama">
+  <p class="kicker"><span lang="tr">/ 03 // NASIL HAYATA GEÇIRECEĞIM</span><span lang="en">/ 03 // HOW I’LL BRING IT TO LIFE</span></p>
+  <h2 id="h-pazarlama"><span lang="tr">Pazarlama ve görünürlük</span><span lang="en">Marketing and visibility</span></h2>
+  <p class="lede"><span lang="tr">Okullar eğitmenliğimi kanıtlıyor; insanların beni tanıdığını hissetmesi için görünürlük gerekiyor.</span><span lang="en">The schools prove my teaching; visibility is what makes people feel they know me.</span></p>
+  <div class="cols">
+    <div><h3><span lang="tr">Kişisel dünya kurma</span><span lang="en">Building a personal world</span></h3><p><span lang="tr">Markaların yaptığı gibi fikirlerimi, sorularımı ve bakış açımı düzenli paylaşarak tanıdıklık ve güven oluşturuyorum. İşin arkasındaki insanı ve süreci göstermek, yapay görünen içerik karşısında fark yaratıyor.</span><span lang="en">Like brands do, I build familiarity and trust by regularly sharing my ideas, questions and point of view. Showing the person and the process behind the work stands out against content that feels artificial.</span></p></div>
+    <div><h3><span lang="tr">Kanallar</span><span lang="en">Channels</span></h3><p><span lang="tr">Instagram’da portfolyo, süreç videoları ve Ar-Ge denemeleri; ücretsiz webinarlar satış hunisinin girişi; öğrenci hikâyeleri; mevcut ve mezun öğrencilerden oluşan okul ağı.</span><span lang="en">Portfolio, process videos and R&amp;D trials on Instagram; free webinars as the entry to the sales funnel; student stories; a school network of current and former students.</span></p></div>
+    <div><h3><span lang="tr">Ücretli reklam</span><span lang="en">Paid advertising</span></h3><p><span lang="tr">Ödül bütçesinden, en iyi çalışan içeriği büyütmek için.</span><span lang="en">From the prize budget, to amplify the content that performs best.</span></p></div>
+  </div>
+  <figure style="margin:0;max-width:62ch">
+    <blockquote class="quote" style="margin:0"><span lang="tr">“Alışılmışın dışında iş yapma biçimim bu. Podcast insanlara ilham veriyor; harekete geçmek isteyenlere eğitim yol gösteriyor; ben de bu araçları nasıl kullandığımı gösteren canlı bir örneğim.”</span><span lang="en">“It’s my way of doing things unconventional… encouraging creative people with the podcast and inspiring them, and if they want to take action, actually providing education… and me as a living, breathing example showing how I’m using these tools.”</span></blockquote>
+    <figcaption class="mute"><span lang="tr">Kendi sözlerimle</span><span lang="en">In my own words</span></figcaption>
+  </figure>
+</section>
+<section class="page" id="odul" aria-labelledby="h-odul">
+  <p class="kicker"><span lang="tr">/ 03 // NASIL HAYATA GEÇIRECEĞIM</span><span lang="en">/ 03 // HOW I’LL BRING IT TO LIFE</span></p>
+  <h2 id="h-odul"><span lang="tr">Ödül bütçesi</span><span lang="en">Prize budget</span></h2>
+  <p class="lede"><span lang="tr">Ödül, saat satan bir modelden kendi ürünü olan bir modele geçişin köprüsü. Ödül işi kuruyor, ders ücretim tabanı koruyor, video modüller saate bağlı olmadan gelir getiriyor.</span><span lang="en">The prize bridges the move from selling hours to owning a product. The prize builds the business, teaching keeps the base, and video modules earn without being tied to hours.</span></p>
+  <p class="mute"><span lang="tr">Ekim 2026 fiyatları ve kurlarıyla.</span><span lang="en">At October 2026 prices and exchange rates.</span></p>
+  <div class="bars">
+    <div class="bar-row"><span class="bar-l"><span lang="tr">Ders yükünü azaltma: haftada 2 gün, 6 ay</span><span lang="en">Reduced teaching load: 2 days a week, 6 months</span></span><span class="bar-t"><span class="bar-f" style="width:100.0%"></span></span><span class="bar-v">135.000</span></div>
+    <div class="bar-row"><span class="bar-l"><span lang="tr">Lazer kesim makinesi (xTool S1 40W sınıfı)</span><span lang="en">Laser cutter (xTool S1 40W class)</span></span><span class="bar-t"><span class="bar-f" style="width:88.9%"></span></span><span class="bar-v">120.000</span></div>
+    <div class="bar-row"><span class="bar-l"><span lang="tr">Reklam</span><span lang="en">Advertising</span></span><span class="bar-t"><span class="bar-f" style="width:44.4%"></span></span><span class="bar-v">60.000</span></div>
+    <div class="bar-row"><span class="bar-l"><span lang="tr">Çekim seti: ışık, ses, tripod</span><span lang="en">Recording kit: light, sound, tripod</span></span><span class="bar-t"><span class="bar-f" style="width:33.3%"></span></span><span class="bar-v">45.000</span></div>
+    <div class="bar-row"><span class="bar-l"><span lang="tr">TouchDesigner Commercial + 1 yıl güncelleme</span><span lang="en">TouchDesigner Commercial + 1 year of updates</span></span><span class="bar-t"><span class="bar-f" style="width:31.9%"></span></span><span class="bar-v">43.000</span></div>
+    <div class="bar-row"><span class="bar-l"><span lang="tr">Platform altyapısı: site, ders sistemi, ödeme/POS, barındırma (12 ay)</span><span lang="en">Platform infrastructure: site, course system, payments, hosting (12 months)</span></span><span class="bar-t"><span class="bar-f" style="width:29.6%"></span></span><span class="bar-v">40.000</span></div>
+    <div class="bar-row"><span class="bar-l"><span lang="tr">3D yazıcı (Bambu Lab P1S Combo)</span><span lang="en">3D printer (Bambu Lab P1S Combo)</span></span><span class="bar-t"><span class="bar-f" style="width:28.9%"></span></span><span class="bar-v">39.000</span></div>
+    <div class="bar-row"><span class="bar-l"><span lang="tr">Biyomateryal ve Ar-Ge deneme malzemeleri</span><span lang="en">Biomaterial and R&amp;D trial materials</span></span><span class="bar-t"><span class="bar-f" style="width:25.9%"></span></span><span class="bar-v">35.000</span></div>
+    <div class="bar-row"><span class="bar-l"><span lang="tr">Diğer yazılım lisansları (12 ay)</span><span lang="en">Other software licences (12 months)</span></span><span class="bar-t"><span class="bar-f" style="width:25.9%"></span></span><span class="bar-v">35.000</span></div>
+    <div class="bar-row"><span class="bar-l"><span lang="tr">Filament ve baskı sarf malzemesi</span><span lang="en">Filament and printing supplies</span></span><span class="bar-t"><span class="bar-f" style="width:14.8%"></span></span><span class="bar-v">20.000</span></div>
+    <div class="bar-row"><span class="bar-l"><span lang="tr">Beklenmeyen giderler (~%5)</span><span lang="en">Contingency (~5%)</span></span><span class="bar-t"><span class="bar-f" style="width:20.7%"></span></span><span class="bar-v">28.000</span></div>
+    <div class="bar-row bar-total"><span class="bar-l"><span lang="tr">Toplam</span><span lang="en">Total</span></span><span class="bar-t"></span><span class="bar-v">600.000 TL</span></div>
+  </div>
+  <div class="cols">
+    <div><h3><span lang="tr">Bugün</span><span lang="en">Today</span></h3><p><span lang="tr">Gelir yalnızca saatlik ders ücreti; güvence yok, Ar-Ge zamanı yok.</span><span lang="en">Income is hourly teaching only; no security, no R&amp;D time.</span></p></div>
+    <div><h3><span lang="tr">Ödülle, 0–6. ay</span><span lang="en">With the prize, month 0–6</span></h3><p><span lang="tr">Azaltılmış ders ve ödül desteği; haftada iki gün platform ve Ar-Ge.</span><span lang="en">Reduced teaching plus prize support; two days a week for the platform and R&amp;D.</span></p></div>
+    <div><h3><span lang="tr">6. aydan sonra</span><span lang="en">After month 6</span></h3><p><span lang="tr">Azaltılmış ders ve platform geliri. Başa baş: aylık platform geliri, aylık sabit gider ile kaybedilen ders gelirini karşıladığında.</span><span lang="en">Reduced teaching plus platform income. Break-even: when monthly platform income covers fixed costs and the lost teaching income.</span></p></div>
+  </div>
+</section>
+<section class="page" id="yol" aria-labelledby="h-yol">
+  <p class="kicker"><span lang="tr">/ 03 // NASIL HAYATA GEÇIRECEĞIM</span><span lang="en">/ 03 // HOW I’LL BRING IT TO LIFE</span></p>
+  <h2 id="h-yol"><span lang="tr">Yol haritası: 6 ay</span><span lang="en">Roadmap: 6 months</span></h2>
+  <ol class="flow"><li><b><span lang="tr">Vizyon</span><span lang="en">Vision</span></b><span><span lang="tr">Teknolojiyi insan için tasarladığımız bir dünya</span><span lang="en">A world where technology is designed for people</span></span></li><li><b><span lang="tr">Hedef</span><span lang="en">Goal</span></b><span><span lang="tr">6 ayda tam çalışan bir platform</span><span lang="en">A fully working platform in 6 months</span></span></li><li><b><span lang="tr">Strateji</span><span lang="en">Strategy</span></b><span><span lang="tr">Haftada 2 gün platform; podcast ile görünürlük; önce İngilizce</span><span lang="en">2 days a week on the platform; visibility through the podcast; English first</span></span></li><li><b><span lang="tr">Eylem</span><span lang="en">Action</span></b><span><span lang="tr">Aşağıdaki takvim</span><span lang="en">The timeline below</span></span></li><li><b><span lang="tr">Ölçüm</span><span lang="en">Measure</span></b><span><span lang="tr">Sayfanın sonundaki SMART hedefler</span><span lang="en">SMART targets at the end of this page</span></span></li></ol>
+  <p class="lede"><span lang="tr">Haftada iki gün, altı ayda tam çalışan bir platform.</span><span lang="en">Two days a week, a fully working platform in six months.</span></p>
+  <div class="scroll-x"><div class="gantt"><div class="g-row g-head"><span></span><span><span lang="tr">1. ay</span><span lang="en">M1</span></span><span><span lang="tr">2. ay</span><span lang="en">M2</span></span><span><span lang="tr">3. ay</span><span lang="en">M3</span></span><span><span lang="tr">4. ay</span><span lang="en">M4</span></span><span><span lang="tr">5. ay</span><span lang="en">M5</span></span><span><span lang="tr">6. ay</span><span lang="en">M6</span></span></div><div class="g-row"><span class="g-l"><span lang="tr">Ekipman, lisans, altyapı</span><span lang="en">Equipment, licences, infrastructure</span></span><span class="g-c on"></span><span class="g-c on"></span><span class="g-c"></span><span class="g-c"></span><span class="g-c"></span><span class="g-c"></span></div><div class="g-row"><span class="g-l"><span lang="tr">Ders kaydı ve kurgu</span><span lang="en">Course recording and editing</span></span><span class="g-c on"></span><span class="g-c on"></span><span class="g-c on"></span><span class="g-c on"></span><span class="g-c on"></span><span class="g-c on"></span></div><div class="g-row"><span class="g-l"><span lang="tr">IDE by AYS podcast</span><span lang="en">IDE by AYS podcast</span></span><span class="g-c on"></span><span class="g-c on"></span><span class="g-c on"></span><span class="g-c on"></span><span class="g-c on"></span><span class="g-c on"></span></div><div class="g-row"><span class="g-l"><span lang="tr">Ücretsiz webinarlar</span><span lang="en">Free webinars</span></span><span class="g-c"></span><span class="g-c on"></span><span class="g-c on"></span><span class="g-c on"></span><span class="g-c on"></span><span class="g-c on"></span></div><div class="g-row"><span class="g-l"><span lang="tr">Modüller yayında</span><span lang="en">Modules live</span></span><span class="g-c"></span><span class="g-c"></span><span class="g-c on"></span><span class="g-c on"></span><span class="g-c on"></span><span class="g-c on"></span></div><div class="g-row"><span class="g-l"><span lang="tr">Canlı program</span><span lang="en">Live programme</span></span><span class="g-c"></span><span class="g-c"></span><span class="g-c on"></span><span class="g-c on"></span><span class="g-c on"></span><span class="g-c on"></span></div><div class="g-row"><span class="g-l"><span lang="tr">Ar-Ge denemeleri</span><span lang="en">R&amp;D trials</span></span><span class="g-c"></span><span class="g-c"></span><span class="g-c on"></span><span class="g-c on"></span><span class="g-c on"></span><span class="g-c on"></span></div><div class="g-row"><span class="g-l"><span lang="tr">Atölye ve kurumsal görüşmeler</span><span lang="en">Workshops and institutional talks</span></span><span class="g-c"></span><span class="g-c"></span><span class="g-c"></span><span class="g-c"></span><span class="g-c on"></span><span class="g-c on"></span></div></div></div>
+  <div class="scroll-x"><table><thead><tr><th scope="col"><span lang="tr">Dönem</span><span lang="en">Period</span></th><th scope="col"><span lang="tr">Ne yapılacak</span><span lang="en">What happens</span></th><th scope="col"><span lang="tr">Ölçülebilir hedef</span><span lang="en">Measurable target</span></th></tr></thead><tbody>
+<tr><td><span lang="tr">1–2. ay</span><span lang="en">Month 1–2</span></td><td><span lang="tr">Ekipman ve lisanslar alınır, platform altyapısı kurulur, ders yükü azaltılır, çekim düzeni oturur; podcast yayında</span><span lang="en">Equipment and licences bought, platform set up, teaching load reduced, recording routine in place; podcast live</span></td><td><span lang="tr">Altyapı hazır, 2 modül çekildi, 1 ücretsiz webinar</span><span lang="en">Infrastructure ready, 2 modules recorded, 1 free webinar</span></td></tr>
+<tr><td><span lang="tr">3–4. ay</span><span lang="en">Month 3–4</span></td><td><span lang="tr">İlk modüller yayına girer, ilk canlı program açılır, biyomateryal ve 3D baskı denemeleri başlar</span><span lang="en">First modules go live, first live programme opens, biomaterial and 3D printing trials begin</span></td><td><span lang="tr">3 modül yayında, 1 canlı program, 2. webinar</span><span lang="en">3 modules live, 1 live programme, 2nd webinar</span></td></tr>
+<tr><td><span lang="tr">5–6. ay</span><span lang="en">Month 5–6</span></td><td><span lang="tr">İlk atölye, kurumsal görüşmeler, Türkçe sürümün hazırlığı</span><span lang="en">First workshop, talks with institutions, preparing the Turkish version</span></td><td><span lang="tr">Platform tam çalışıyor, 5 modül, 50 ücretli öğrenci, 1 atölye</span><span lang="en">Platform fully working, 5 modules, 50 paying students, 1 workshop</span></td></tr>
+<tr><td><span lang="tr">6–12. ay</span><span lang="en">Month 6–12</span></td><td><span lang="tr">İkinci aşama: dersler Türkçeleştirilir; hem terminoloji Türkçeye kazandırılır hem de dil bariyerine takılanlara teknik eğitim insanı merkeze alarak ulaştırılır. Atölyeler ve kurumsal eğitim büyür; Ar-Ge çıktıları yeni modüllere dönüşür</span><span lang="en">Phase two: courses are translated into Turkish, bringing the terminology into Turkish and reaching people held back by the language barrier with human-centred technical education. Workshops and corporate training grow; R&amp;D results become new modules</span></td><td><span lang="tr">8 modül, 4 atölye, 1 kurumsal anlaşma, 200 öğrenci, en az %60 kadın</span><span lang="en">8 modules, 4 workshops, 1 corporate deal, 200 students, at least 60% women</span></td></tr>
+</tbody></table></div>
+  <h3><span lang="tr">SMART hedefler</span><span lang="en">SMART targets</span></h3>
+  <div class="scroll-x"><table><thead><tr><th scope="col">KPI</th><th scope="col"><span lang="tr">6. ay hedefi</span><span lang="en">Month 6 target</span></th><th scope="col"><span lang="tr">Neyi gösteriyor</span><span lang="en">What it shows</span></th></tr></thead><tbody>
+<tr><td><span lang="tr">Yayındaki video modül</span><span lang="en">Video modules live</span></td><td>5</td><td><span lang="tr">Pasif gelirin temeli</span><span lang="en">The basis of passive income</span></td></tr>
+<tr><td><span lang="tr">Ücretli öğrenci</span><span lang="en">Paying students</span></td><td>50</td><td><span lang="tr">Talebin gelire dönüşmesi</span><span lang="en">Demand turning into revenue</span></td></tr>
+<tr><td><span lang="tr">Canlı program ve atölye</span><span lang="en">Live programmes and workshops</span></td><td>1 + 1</td><td><span lang="tr">Aktif gelir ve topluluk</span><span lang="en">Active income and community</span></td></tr>
+<tr><td><span lang="tr">Kadın öğrenci oranı</span><span lang="en">Share of women students</span></td><td><span lang="tr">≥ %60 (12. ay)</span><span lang="en">≥ 60% (month 12)</span></td><td><span lang="tr">Kadınlar ve teknoloji sütunu</span><span lang="en">Women and technology pillar</span></td></tr>
+<tr><td><span lang="tr">Modül tamamlama oranı</span><span lang="en">Module completion rate</span></td><td><span lang="tr">1–2. ayda başlangıç değeri</span><span lang="en">Baseline set in month 1–2</span></td><td><span lang="tr">İçeriğin işe yaradığının kanıtı</span><span lang="en">Proof the content works</span></td></tr>
+<tr><td><span lang="tr">Geri dönen öğrenci oranı</span><span lang="en">Returning student rate</span></td><td><span lang="tr">1–2. ayda başlangıç değeri</span><span lang="en">Baseline set in month 1–2</span></td><td><span lang="tr">Güven ve sadakat</span><span lang="en">Trust and loyalty</span></td></tr>
+<tr><td><span lang="tr">Türkçe sürüm</span><span lang="en">Turkish version</span></td><td><span lang="tr">6. aydan sonra</span><span lang="en">After month 6</span></td><td><span lang="tr">Kapsayıcılık</span><span lang="en">Inclusion</span></td></tr>
+<tr><td><span lang="tr">Ders öncesi/sonrası özgüven anketi</span><span lang="en">Before/after confidence survey</span></td><td><span lang="tr">Her programda</span><span lang="en">Every programme</span></td><td><span lang="tr">Cam tavan etkisi</span><span lang="en">Glass-ceiling effect</span></td></tr>
+</tbody></table></div>
+</section>
+<section class="page" id="riskler" aria-labelledby="h-riskler">
+  <p class="kicker"><span lang="tr">/ 03 // NASIL HAYATA GEÇIRECEĞIM</span><span lang="en">/ 03 // HOW I’LL BRING IT TO LIFE</span></p>
+  <h2 id="h-riskler"><span lang="tr">Projenin başarısı neye dayanıyor</span><span lang="en">What this project’s success rests on</span></h2>
+  <p class="lede"><span lang="tr">Her şeyi denemeye açık biri olarak neyin bana ve insanlara uymadığını ele ele buldum. Girişimlerin en sık karşılaştığı engelleri de aynı şekilde tek tek ele alıp planı bunlara karşı sağlam kurdum.</span><span lang="en">Being open to trying everything, I found out by elimination what doesn’t suit me or reach people. I went through the most common obstacles ventures face the same way, one by one, and built the plan to stand up to them.</span></p>
+  <figure class="wide">
+    <div class="scroll-x"><svg class="diagram" viewBox="0 0 680 490" role="img" aria-labelledby="fail-t"><title id="fail-t">Most frequently cited reasons for startup failure, CB Insights</title><text lang="tr" x="262" y="20" text-anchor="end" font-size="12" font-weight="500">Pazar ihtiyacı yok</text><text lang="en" x="262" y="20" text-anchor="end" font-size="12" font-weight="500">No market need</text><rect x="272" y="8" width="361" height="15" fill="currentColor" stroke="currentColor" stroke-width="1"/><text x="639" y="20" font-size="12">%42</text><text lang="tr" x="262" y="44" text-anchor="end" font-size="12" font-weight="500">Paranın bitmesi</text><text lang="en" x="262" y="44" text-anchor="end" font-size="12" font-weight="500">Ran out of cash</text><rect x="272" y="32" width="249" height="15" fill="currentColor" stroke="currentColor" stroke-width="1"/><text x="527" y="44" font-size="12">%29</text><text lang="tr" x="262" y="68" text-anchor="end" font-size="12" font-weight="500">Yanlış ekip</text><text lang="en" x="262" y="68" text-anchor="end" font-size="12" font-weight="500">Not the right team</text><rect x="272" y="56" width="198" height="15" fill="currentColor" stroke="currentColor" stroke-width="1"/><text x="476" y="68" font-size="12">%23</text><text lang="tr" x="262" y="92" text-anchor="end" font-size="12" font-weight="500">Rekabette geride kalmak</text><text lang="en" x="262" y="92" text-anchor="end" font-size="12" font-weight="500">Got outcompeted</text><rect x="272" y="80" width="163" height="15" fill="currentColor" stroke="currentColor" stroke-width="1"/><text x="441" y="92" font-size="12">%19</text><text lang="tr" x="262" y="116" text-anchor="end" font-size="12" font-weight="500">Fiyat ve maliyet sorunları</text><text lang="en" x="262" y="116" text-anchor="end" font-size="12" font-weight="500">Pricing/cost issues</text><rect x="272" y="104" width="155" height="15" fill="currentColor" stroke="currentColor" stroke-width="1"/><text x="433" y="116" font-size="12">%18</text><text lang="tr" x="262" y="140" text-anchor="end" font-size="12" font-weight="500">Zayıf ürün</text><text lang="en" x="262" y="140" text-anchor="end" font-size="12" font-weight="500">Poor product</text><rect x="272" y="128" width="146" height="15" fill="currentColor" stroke="currentColor" stroke-width="1"/><text x="424" y="140" font-size="12">%17</text><text lang="tr" x="262" y="164" text-anchor="end" font-size="12" font-weight="500">İş modeli eksikliği</text><text lang="en" x="262" y="164" text-anchor="end" font-size="12" font-weight="500">Need/lack business model</text><rect x="272" y="152" width="146" height="15" fill="currentColor" stroke="currentColor" stroke-width="1"/><text x="424" y="164" font-size="12">%17</text><text lang="tr" x="262" y="188" text-anchor="end" font-size="12" font-weight="500">Zayıf pazarlama</text><text lang="en" x="262" y="188" text-anchor="end" font-size="12" font-weight="500">Poor marketing</text><rect x="272" y="176" width="120" height="15" fill="currentColor" stroke="currentColor" stroke-width="1"/><text x="398" y="188" font-size="12">%14</text><text lang="tr" x="262" y="212" text-anchor="end" font-size="12" font-weight="500">Müşteriyi dinlememek</text><text lang="en" x="262" y="212" text-anchor="end" font-size="12" font-weight="500">Ignore customers</text><rect x="272" y="200" width="120" height="15" fill="currentColor" stroke="currentColor" stroke-width="1"/><text x="398" y="212" font-size="12">%14</text><text lang="tr" x="262" y="236" text-anchor="end" font-size="12" font-weight="300" class="m">Yanlış zamanlama</text><text lang="en" x="262" y="236" text-anchor="end" font-size="12" font-weight="300" class="m">Product mis-timed</text><rect x="272" y="224" width="112" height="15" fill="none" stroke="currentColor" stroke-width="1"/><text x="390" y="236" font-size="12" class="m">%13</text><text lang="tr" x="262" y="260" text-anchor="end" font-size="12" font-weight="300" class="m">Odağı kaybetmek</text><text lang="en" x="262" y="260" text-anchor="end" font-size="12" font-weight="300" class="m">Lose focus</text><rect x="272" y="248" width="112" height="15" fill="none" stroke="currentColor" stroke-width="1"/><text x="390" y="260" font-size="12" class="m">%13</text><text lang="tr" x="262" y="284" text-anchor="end" font-size="12" font-weight="300" class="m">Ekip/yatırımcı uyumsuzluğu</text><text lang="en" x="262" y="284" text-anchor="end" font-size="12" font-weight="300" class="m">Disharmony on team/investors</text><rect x="272" y="272" width="112" height="15" fill="none" stroke="currentColor" stroke-width="1"/><text x="390" y="284" font-size="12" class="m">%13</text><text lang="tr" x="262" y="308" text-anchor="end" font-size="12" font-weight="300" class="m">Kötü yön değişikliği</text><text lang="en" x="262" y="308" text-anchor="end" font-size="12" font-weight="300" class="m">Pivot gone bad</text><rect x="272" y="296" width="86" height="15" fill="none" stroke="currentColor" stroke-width="1"/><text x="364" y="308" font-size="12" class="m">%10</text><text lang="tr" x="262" y="332" text-anchor="end" font-size="12" font-weight="300" class="m">Tutku eksikliği</text><text lang="en" x="262" y="332" text-anchor="end" font-size="12" font-weight="300" class="m">Lack passion</text><rect x="272" y="320" width="77" height="15" fill="none" stroke="currentColor" stroke-width="1"/><text x="355" y="332" font-size="12" class="m">%9</text><text lang="tr" x="262" y="356" text-anchor="end" font-size="12" font-weight="500">Kötü konum</text><text lang="en" x="262" y="356" text-anchor="end" font-size="12" font-weight="500">Bad location</text><rect x="272" y="344" width="77" height="15" fill="currentColor" stroke="currentColor" stroke-width="1"/><text x="355" y="356" font-size="12">%9</text><text lang="tr" x="262" y="380" text-anchor="end" font-size="12" font-weight="300" class="m">Finansman bulamamak</text><text lang="en" x="262" y="380" text-anchor="end" font-size="12" font-weight="300" class="m">No financing/investor interest</text><rect x="272" y="368" width="69" height="15" fill="none" stroke="currentColor" stroke-width="1"/><text x="347" y="380" font-size="12" class="m">%8</text><text lang="tr" x="262" y="404" text-anchor="end" font-size="12" font-weight="300" class="m">Hukuki sorunlar</text><text lang="en" x="262" y="404" text-anchor="end" font-size="12" font-weight="300" class="m">Legal challenges</text><rect x="272" y="392" width="69" height="15" fill="none" stroke="currentColor" stroke-width="1"/><text x="347" y="404" font-size="12" class="m">%8</text><text lang="tr" x="262" y="428" text-anchor="end" font-size="12" font-weight="300" class="m">Ağı ve danışmanları kullanmamak</text><text lang="en" x="262" y="428" text-anchor="end" font-size="12" font-weight="300" class="m">Don’t use network/advisors</text><rect x="272" y="416" width="69" height="15" fill="none" stroke="currentColor" stroke-width="1"/><text x="347" y="428" font-size="12" class="m">%8</text><text lang="tr" x="262" y="452" text-anchor="end" font-size="12" font-weight="300" class="m">Tükenmişlik</text><text lang="en" x="262" y="452" text-anchor="end" font-size="12" font-weight="300" class="m">Burn out</text><rect x="272" y="440" width="69" height="15" fill="none" stroke="currentColor" stroke-width="1"/><text x="347" y="452" font-size="12" class="m">%8</text><text lang="tr" x="262" y="476" text-anchor="end" font-size="12" font-weight="300" class="m">Yön değiştirememek</text><text lang="en" x="262" y="476" text-anchor="end" font-size="12" font-weight="300" class="m">Failure to pivot</text><rect x="272" y="464" width="60" height="15" fill="none" stroke="currentColor" stroke-width="1"/><text x="338" y="476" font-size="12" class="m">%7</text></svg></div>
+    <figcaption><span lang="tr">En sık gösterilen batma nedenleri, 101 girişimin kapanış analizine göre. Dolu çubuklar bu planın doğrudan cevap verdiği nedenler. Kaynak: CB Insights, Statista grafiğinden yeniden çizildi.</span><span lang="en">Most frequently cited reasons for startup failure, based on 101 startup post-mortems. Filled bars are the reasons this plan answers directly. Source: CB Insights, redrawn from a Statista chart.</span> <a href="https://www.cbinsights.com/research/startup-failure-reasons-top/" target="_blank" rel="noopener">CB Insights</a></figcaption>
+  </figure>
+  <div class="scroll-x"><table><thead><tr><th scope="col"><span lang="tr">Girişimlerin sık engeli</span><span lang="en">Common obstacle</span></th><th scope="col"><span lang="tr">Bu planın dayanağı</span><span lang="en">What this plan rests on</span></th></tr></thead><tbody>
+<tr><td><span lang="tr">Pazar ihtiyacı yok (%42)</span><span lang="en">No market need (42%)</span></td><td><span lang="tr">Platform fikri talepten doğdu: paylaştığım işlere gelen “bunun eğitimini veriyor musunuz?” sorusundan. Şu an okullardan bağımsız 3 sınıfta 10 öğrencim var.</span><span lang="en">The platform grew out of demand: people kept asking “do you teach this?” about the work I shared. Right now I have 10 students in 3 classes of my own, independent of the schools.</span></td></tr>
+<tr><td><span lang="tr">Paranın bitmesi (%29)</span><span lang="en">Ran out of cash (29%)</span></td><td><span lang="tr">Fiziksel ürün yok; stok, elde kalan ya da satılamayan ürün riski yok. Ödül ekipmana, yazılıma ve eğitime, yani doğrudan araştırmaya ve derslere dönüşüyor. Okul derslerim gelir tabanı olarak sürüyor.</span><span lang="en">No physical product, so no stock, unsold goods or inventory risk. The prize turns into equipment, software and training, straight into research and courses. School teaching continues as an income base.</span></td></tr>
+<tr><td><span lang="tr">Yanlış ekip (%23)</span><span lang="en">Not the right team (23%)</span></td><td><span lang="tr">Bir ekibin gerektireceği beceriler tek kişide: front-end ve arayüz tasarımı, ajansta multimedya tasarımcılığı, video, müfredat hazırlama, 4 yıllık eğitmenlik. Tek kişiye bağlılığı video modüller ölçekliyor.</span><span lang="en">The skills a team would need are in one person: front-end and interface design, multimedia design at an agency, video, curriculum design, four years of teaching. Video modules scale beyond one person.</span></td></tr>
+<tr><td><span lang="tr">Rekabette geride kalmak (%19)</span><span lang="en">Got outcompeted (19%)</span></td><td><span lang="tr">Benzer platformlar tek bir parçayı veriyor: yazılım eğitimi ya da çevrim içi yüksek lisans. Araç eğitimini düşünme biçimiyle birleştiren yok.</span><span lang="en">Similar platforms each offer one part: software training or an online master’s. None combines tool training with a way of thinking.</span></td></tr>
+<tr><td><span lang="tr">Fiyat ve maliyet (%18)</span><span lang="en">Pricing and cost (18%)</span></td><td><span lang="tr">Sektörün içindeyim; yaz boyunca 10 eğitim satarak fiyata gelen geri bildirimi doğrudan gördüm.</span><span lang="en">I work inside the sector; selling 10 courses over the summer showed me first-hand how people respond to pricing.</span></td></tr>
+<tr><td><span lang="tr">Zayıf ürün (%17)</span><span lang="en">Poor product (17%)</span></td><td><span lang="tr">Ürün eğitimlerim; hem okullardan hem öğrencilerden sürekli geri bildirim alıyorum. Öğrenci videoları bunun kanıtı.</span><span lang="en">The product is my teaching, with constant feedback from both schools and students. The student videos are the evidence.</span></td></tr>
+<tr><td><span lang="tr">İş modeli eksikliği (%17)</span><span lang="en">Lack of business model (17%)</span></td><td><span lang="tr">Dersler video modüllere dönüşüp pasif gelir; canlı dersler ve atölyeler aktif gelir getiriyor.</span><span lang="en">Courses become video modules for passive income; live classes and workshops bring active income.</span></td></tr>
+<tr><td><span lang="tr">Zayıf pazarlama (%14)</span><span lang="en">Poor marketing (14%)</span></td><td><span lang="tr">Kardeş proje IDE by AYS podcast’i ve sosyal medya, platforma insan yönlendiriyor.</span><span lang="en">The sister project, the IDE by AYS podcast, and social media send people to the platform.</span></td></tr>
+<tr><td><span lang="tr">Müşteriyi dinlememek (%14)</span><span lang="en">Ignoring customers (14%)</span></td><td><span lang="tr">Öğrencilerimle her hafta derslerdeyim; kendim de tasarımcı olduğum için ihtiyacı içeriden biliyorum.</span><span lang="en">I am in class with my students every week, and as a designer myself I know the need from the inside.</span></td></tr>
+<tr><td><span lang="tr">Kötü konum (%9)</span><span lang="en">Bad location (9%)</span></td><td><span lang="tr">Platform çevrim içi; konuma bağlı değil.</span><span lang="en">The platform is online; location doesn’t apply.</span></td></tr>
+</tbody></table></div>
+</section>
+<section class="page" id="arge" aria-labelledby="h-arge">
+  <p class="kicker"><span lang="tr">/ 03 // NASIL HAYATA GEÇIRECEĞIM</span><span lang="en">/ 03 // HOW I’LL BRING IT TO LIFE</span></p>
+  <h2 id="h-arge"><span lang="tr">Ar-Ge</span><span lang="en">R&amp;D</span></h2>
+  <p class="lede"><span lang="tr">Platform büyüdükçe araştırma büyüyor; araştırma da yeni modüllere dönüşüyor.</span><span lang="en">As the platform grows, so does the research; the research in turn becomes new modules.</span></p>
+  <div class="cols">
+    <div><h3><span lang="tr">Ar-Ge hatları</span><span lang="en">R&amp;D lines</span></h3><p><span lang="tr">Önce üretimi azaltan dijital süreçler; sonra biyomateryaller, 3D baskı kumaşlar, sıfır ve az atık yaklaşımları, geri dönüşüm ve ileri dönüşüm için dijital araçlar.</span><span lang="en">First, digital processes that reduce production; then biomaterials, 3D-printed fabrics, zero- and low-waste approaches, digital tools for recycling and upcycling.</span></p></div>
+    <div><h3><span lang="tr">Genişleyen alan</span><span lang="en">Widening field</span></h3><p><span lang="tr">İnsan-bilgisayar etkileşimi, giyilebilir teknoloji, yumuşak robotik, insan bedenine uygun biyo-bazlı malzemeler, deri üstü arayüzler.</span><span lang="en">Human–computer interaction, wearable technology, soft robotics, bio-based materials suited to the body, on-skin interfaces.</span></p></div>
+    <div><h3><span lang="tr">İlham aldığım yerler</span><span lang="en">Where I draw inspiration</span></h3><p><span lang="tr">Behnaz Farahi, MIT Media Lab Critical Matter: teknolojiyi sosyal bilimlerden ayırmadan, beden ve duygu üzerinden ele alıyor. Cindy Hsin-Liu Kao, Cornell Hybrid Body Lab: kültürden beslenen deri üstü arayüzler. Skylar Tibbits, MIT Self-Assembly Lab: tek parça örülen, kes-dik atığını neredeyse sıfırlayan 4D Knit Dress. Lining Yao, Morphing Matter Lab: biçim değiştiren yumuşak malzemeler. Neri Oxman’ın Krebs Cycle of Creativity’si: sanat, bilim, mühendislik ve tasarımı birinin çıktısı diğerinin girdisi olan tek bir döngüde birleştiriyor ve tek bir kişinin birden fazla alanda var olabileceğini savunuyor (<a href="https://betterworld.mit.edu/spectrum/issues/winter-2017/neri-oxmans-krebs-cycle-of-creativity/" target="_blank" rel="noopener">MIT</a>). Çıkış noktası Bauhaus’un müfredat diyagramı; yani bir eğitim modeli. Zach Lieberman.</span><span lang="en">Behnaz Farahi, MIT Media Lab Critical Matter: technology approached through body and emotion, not separated from the social sciences. Cindy Hsin-Liu Kao, Cornell Hybrid Body Lab: culturally grounded on-skin interfaces. Skylar Tibbits, MIT Self-Assembly Lab: the 4D Knit Dress, knitted in one piece with almost no cut-and-sew waste. Lining Yao, Morphing Matter Lab: soft shape-changing materials. Neri Oxman’s Krebs Cycle of Creativity joins art, science, engineering and design in one cycle where the output of one becomes the input of another, and holds that a single person can live in several domains (<a href="https://betterworld.mit.edu/spectrum/issues/winter-2017/neri-oxmans-krebs-cycle-of-creativity/" target="_blank" rel="noopener">MIT</a>). Its starting point is the Bauhaus curriculum diagram, an educational model. Zach Lieberman.</span></p></div>
+  </div>
+</section>
+<section class="page" id="tesekkur" aria-labelledby="h-tesekkur">
+  <h2 id="h-tesekkur"><span lang="tr">Teşekkürler</span><span lang="en">Thank you</span></h2>
+  <p class="lede"><span lang="tr">Çok uzun olmayan bir süre önce, meraklarımın peşinden gidip bunu bir işe dönüştürebileceğimi bilmiyordum; kimse bana bunun mümkün olduğunu söylememişti. Bu program beni gerçekten değiştirdi.</span><span lang="en">Not long ago I didn’t know I could follow my curiosity and turn it into work; no one had told me it was possible. This programme truly changed me.</span></p>
+  <p><span lang="tr">Mentörüm Şebnem Işık Ersoy’a; programı hayata geçiren Mercedes-Benz ekibine; jüri üyelerimize; gönüllü olarak genç kadınlara el uzatan bütün mentörlere; vaktini ayırıp konuşma yapan herkese ve bu yolda tanıştığım menti arkadaşlarıma ayrı ayrı teşekkür ederim. Hepsinden not aldım, hepsinden öğrendim.</span><span lang="en">My thanks to my mentor Şebnem Işık Ersoy; to the Mercedes-Benz team who made this programme happen; to our jury; to every mentor who volunteered to reach out to young women; to everyone who gave their time to speak; and to the fellow mentees I met along the way. I took notes from all of them and learned from all of them.</span></p>
+  <p class="mute">Ayşegül Atik</p>
+</section>
+<section class="page" id="kaynaklar" aria-labelledby="h-kaynaklar">
+  <h2 id="h-kaynaklar"><span lang="tr">Kaynaklar</span><span lang="en">Sources</span></h2>
+  <ul class="plain">
+    <li><a href="https://theworld.org/stories/2015/06/16/testing-embed-chart" target="_blank" rel="noopener">theworld.org</a></li>
+    <li><a href="https://www.inc.com/sadiya-kherani/prada-hand-drawn-campaign-anti-ai-slop-luxury-strategy/91426507" target="_blank" rel="noopener">inc.com</a></li>
+    <li><a href="https://news.un.org/en/story/2019/03/1035161" target="_blank" rel="noopener">news.un.org</a></li>
+    <li><a href="https://news.mit.edu/2025/refashion-software-designs-eco-friendly-clothing-that-can-reassemble-new-items-1017" target="_blank" rel="noopener">news.mit.edu</a></li>
+    <li><a href="https://newsinfo.inquirer.net/1018650/japan-med-school-confirms-altering-scores-to-keep-out-women" target="_blank" rel="noopener">newsinfo.inquirer.net</a></li>
+    <li><a href="https://www.casestudies.com/company/browzwear/case-study/odlo-cuts-sample-investment-by-70-with-browzwear" target="_blank" rel="noopener">casestudies.com</a></li>
+    <li><a href="https://english.aawsat.com/home/article/3296286/chiles-desert-dumping-ground-fast-fashion-leftovers?page=1" target="_blank" rel="noopener">english.aawsat.com</a></li>
+    <li><a href="https://www.toureiffel.paris/en/the-monument/key-figures" target="_blank" rel="noopener">toureiffel.paris</a></li>
+    <li><a href="https://browzwear.com/request-a-demo" target="_blank" rel="noopener">browzwear.com</a></li>
+    <li><a href="https://www.moma.org/calendar/events/6596" target="_blank" rel="noopener">moma.org</a></li>
+    <li><a href="https://betterworld.mit.edu/spectrum/issues/winter-2017/neri-oxmans-krebs-cycle-of-creativity/" target="_blank" rel="noopener">betterworld.mit.edu</a></li>
+    <li><a href="https://www.media.mit.edu/groups/critical-matter/overview/" target="_blank" rel="noopener">media.mit.edu</a></li>
+    <li><a href="https://www.media.mit.edu/groups/future-sketches/overview/" target="_blank" rel="noopener">media.mit.edu</a></li>
+    <li><a href="https://www.smithsonianmag.com/innovation/dutch-designer-who-pioneering-use-3d-printing-fashion-180957184/" target="_blank" rel="noopener">smithsonianmag.com</a></li>
+    <li><a href="https://www.irisvanherpen.com/about/the-maison" target="_blank" rel="noopener">irisvanherpen.com</a></li>
+    <li><a href="https://www.fhcm.paris/en/haute-couture-week/calendar" target="_blank" rel="noopener">fhcm.paris</a></li>
+    <li><a href="https://builtin.com/job/3d-designer-design/3553303" target="_blank" rel="noopener">builtin.com</a></li>
+    <li><a href="https://dailydot.com/apple-tv-new-intro-anti-ai" target="_blank" rel="noopener">dailydot.com</a></li>
+    <li><a href="https://www.digitec.ch/en/page/apples-weihnachts-werbung-setzt-auf-menschen-statt-ki-40643" target="_blank" rel="noopener">digitec.ch</a></li>
+    <li><a href="https://www.youtube.com/watch?v=S0rNVwDA6o4" target="_blank" rel="noopener">youtube.com</a></li>
+    <li><a href="https://apple.com/newsroom/2026/10/bunyamin-aydins-new-collection-from-earth-to-sky-soars-with-ipad-pro/" target="_blank" rel="noopener">apple.com</a></li>
+    <li><a href="https://okamirufu-s-school.teachable.com/courses/2706978" target="_blank" rel="noopener">okamirufu-s-school.teachable.com</a></li>
+    <li><a href="https://aysatik.github.io/mercedes/" target="_blank" rel="noopener">aysatik.github.io</a></li>
+    <li><a href="https://www.cbinsights.com/research/startup-failure-reasons-top/" target="_blank" rel="noopener">cbinsights.com</a></li>
+  </ul>
+</section>
+</main>
+
+<button class="panel-tab" id="panelTab" aria-controls="panel" aria-expanded="false"><span lang="tr">Görünüm</span><span lang="en">Display</span></button>
+
+<aside class="panel" id="panel" aria-labelledby="panelTitle" inert>
+  <div class="panel-head">
+    <h2 id="panelTitle"><span lang="tr">Görünüm</span><span lang="en">Display</span></h2>
+    <button id="panelClose"><span lang="tr">Kapat</span><span lang="en">Close</span></button>
+  </div>
+
+  <fieldset>
+    <legend><span lang="tr">Dil</span><span lang="en">Language</span></legend>
+    <div class="btns" role="group" aria-label="Dil / Language">
+      <button data-setlang="tr" aria-pressed="true">Türkçe</button>
+      <button data-setlang="en" aria-pressed="false">English</button>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend><span lang="tr">Metin boyutu</span><span lang="en">Text size</span></legend>
+    <div class="row"><label for="c-hs"><span lang="tr">Başlıklar</span><span lang="en">Headings</span></label><output data-o="hs"></output><input id="c-hs" type="range" min="0.6" max="1.8" step="0.05" data-k="hs"></div>
+    <div class="row"><label for="c-bs"><span lang="tr">Metin</span><span lang="en">Body text</span></label><output data-o="bs"></output><input id="c-bs" type="range" min="0.85" max="2" step="0.05" data-k="bs"></div>
+  </fieldset>
+
+  <fieldset>
+    <legend><span lang="tr">Yazı tipi</span><span lang="en">Typeface</span></legend>
+    <label for="c-font" class="hint" style="display:block;margin:0 0 .3rem"><span lang="tr">Tüm sayfa için</span><span lang="en">For the whole page</span></label>
+    <select id="c-font" data-k="font">
+      <option value="jakarta">Plus Jakarta Sans + Playfair</option>
+      <option value="martian">Martian Mono</option>
+      <option value="plex">IBM Plex Mono</option>
+      <option value="atkinson">Atkinson Hyperlegible</option>
+      <option value="lexend">Lexend</option>
+      <option value="system">System</option>
+    </select>
+    <p class="hint"><span lang="tr">Atkinson Hyperlegible az gören okurlar için, Lexend okuma akıcılığı için tasarlandı.</span><span lang="en">Atkinson Hyperlegible was designed for low-vision readers, Lexend for reading fluency.</span></p>
+  </fieldset>
+
+  <fieldset>
+    <legend><span lang="tr">Aralıklar</span><span lang="en">Spacing</span></legend>
+    <div class="row"><label for="c-lh"><span lang="tr">Satır aralığı</span><span lang="en">Line height</span></label><output data-o="lh"></output><input id="c-lh" type="range" min="1.2" max="2.4" step="0.05" data-k="lh"></div>
+    <div class="row"><label for="c-ls"><span lang="tr">Harf aralığı</span><span lang="en">Letter spacing</span></label><output data-o="ls"></output><input id="c-ls" type="range" min="0" max="0.2" step="0.01" data-k="ls"></div>
+    <div class="row"><label for="c-ws"><span lang="tr">Kelime aralığı</span><span lang="en">Word spacing</span></label><output data-o="ws"></output><input id="c-ws" type="range" min="0" max="0.5" step="0.02" data-k="ws"></div>
+  </fieldset>
+
+  <fieldset>
+    <legend><span lang="tr">Okuma desteği</span><span lang="en">Reading support</span></legend>
+    <label class="check"><input type="checkbox" data-k="dys"><span><span lang="tr">Disleksi dostu ayarlar (Lexend, geniş aralıklar, sola hizalı)</span><span lang="en">Dyslexia-friendly settings (Lexend, wider spacing, left aligned)</span></span></label>
+    <label class="check"><input type="checkbox" data-k="guide"><span><span lang="tr">Okuma cetveli: imlecin olduğu satır dışını karart</span><span lang="en">Reading ruler: dim everything except the line under the pointer</span></span></label>
+    <label class="check"><input type="checkbox" data-k="links"><span><span lang="tr">Bağlantıları vurgula</span><span lang="en">Highlight links</span></span></label>
+    <label class="check"><input type="checkbox" data-k="align"><span><span lang="tr">Tüm metni sola hizala</span><span lang="en">Left-align all text</span></span></label>
+    <label class="check"><input type="checkbox" data-k="cursor"><span><span lang="tr">Büyük imleç</span><span lang="en">Large cursor</span></span></label>
+    <label class="check"><input type="checkbox" data-k="focus"><span><span lang="tr">Klavye odağını belirginleştir</span><span lang="en">Stronger keyboard focus</span></span></label>
+  </fieldset>
+
+  <fieldset>
+    <legend><span lang="tr">Renk</span><span lang="en">Colour</span></legend>
+    <label class="radio"><input type="radio" name="theme" value="auto"><span><span lang="tr">Sistemi izle</span><span lang="en">Follow system</span></span></label>
+    <label class="radio"><input type="radio" name="theme" value="light"><span><span lang="tr">Beyaz zemin, siyah metin</span><span lang="en">White background, black text</span></span></label>
+    <label class="radio"><input type="radio" name="theme" value="dark"><span><span lang="tr">Siyah zemin, beyaz metin</span><span lang="en">Black background, white text</span></span></label>
+    <label class="radio"><input type="radio" name="theme" value="yellow"><span><span lang="tr">Yüksek kontrast: siyah üzerine sarı</span><span lang="en">High contrast: yellow on black</span></span></label>
+    <label class="radio"><input type="radio" name="theme" value="soft"><span><span lang="tr">Düşük parlaklık</span><span lang="en">Low glare</span></span></label>
+    <label class="radio"><input type="radio" name="theme" value="custom"><span><span lang="tr">Kendi renklerim</span><span lang="en">My own colours</span></span></label>
+    <div class="colors">
+      <label><span><span lang="tr">Metin</span><span lang="en">Text</span></span><input type="color" data-k="fg"></label>
+      <label><span><span lang="tr">Zemin</span><span lang="en">Background</span></span><input type="color" data-k="bg"></label>
+    </div>
+    <p class="hint" id="contrast" aria-live="polite"></p>
+  </fieldset>
+
+  <fieldset>
+    <legend><span lang="tr">Renk görme simülasyonu</span><span lang="en">Colour vision simulation</span></legend>
+    <p class="hint" style="margin-top:0"><span lang="tr">Seçilen renklerin farklı renk görme tiplerinde nasıl göründüğünü gösterir.</span><span lang="en">Shows how the chosen colours look with different types of colour vision.</span></p>
+    <label class="radio"><input type="radio" name="cvd" value="none"><span><span lang="tr">Kapalı</span><span lang="en">Off</span></span></label>
+    <label class="radio"><input type="radio" name="cvd" value="protan"><span><span lang="tr">Protanopi (kırmızı)</span><span lang="en">Protanopia (red)</span></span></label>
+    <label class="radio"><input type="radio" name="cvd" value="deutan"><span><span lang="tr">Döteranopi (yeşil)</span><span lang="en">Deuteranopia (green)</span></span></label>
+    <label class="radio"><input type="radio" name="cvd" value="tritan"><span><span lang="tr">Tritanopi (mavi)</span><span lang="en">Tritanopia (blue)</span></span></label>
+    <label class="radio"><input type="radio" name="cvd" value="achro"><span><span lang="tr">Akromatopsi (renk yok)</span><span lang="en">Achromatopsia (no colour)</span></span></label>
+  </fieldset>
+
+  <fieldset>
+    <legend><span lang="tr">Hareket ve gezinme</span><span lang="en">Motion and navigation</span></legend>
+    <label class="check"><input type="checkbox" data-k="motion"><span><span lang="tr">Animasyonları kapat</span><span lang="en">Turn off animations</span></span></label>
+    <label class="check"><input type="checkbox" data-k="snap"><span><span lang="tr">Kaydırınca sayfaya oturt</span><span lang="en">Snap to pages while scrolling</span></span></label>
+  </fieldset>
+
+  <fieldset>
+    <legend><span lang="tr">Sesli okuma</span><span lang="en">Read aloud</span></legend>
+    <div class="btns"><button id="speak" aria-pressed="false"><span lang="tr">Bu sayfayı oku</span><span lang="en">Read this page</span></button></div>
+    <p class="hint" id="speakNote"></p>
+  </fieldset>
+
+  <fieldset>
+    <legend><span lang="tr">Sıfırla</span><span lang="en">Reset</span></legend>
+    <button id="reset"><span lang="tr">Tüm ayarları sıfırla</span><span lang="en">Reset all settings</span></button>
+  </fieldset>
+</aside>
+
+<div class="guide" id="guide" aria-hidden="true"></div>
+<div class="progress" aria-hidden="true"><span id="progressFill"></span></div>
+
+<script>
+(function(){
+  var KEY = "aysatik-display-v3";
+  var DEF = {lang:"tr",hs:1,bs:1,font:"jakarta",lh:1.6,ls:0,ws:0,theme:"auto",fg:"#000000",bg:"#ffffff",cvd:"none",dys:false,guide:false,links:false,align:false,cursor:false,focus:false,motion:false,snap:true};
+  var FONTS = {
+    jakarta:['"Plus Jakarta Sans","Helvetica Neue",Arial,sans-serif','"Playfair Display",Georgia,serif','"JetBrains Mono",ui-monospace,Menlo,monospace'],
+    martian:['"Martian Mono",ui-monospace,Menlo,monospace'],
+    plex:['"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace'],
+    atkinson:['"Atkinson Hyperlegible","Helvetica Neue",Arial,sans-serif'],
+    lexend:['"Lexend","Helvetica Neue",Arial,sans-serif'],
+    system:['system-ui,-apple-system,"Segoe UI",Roboto,sans-serif']
+  };
+  var S = Object.assign({}, DEF);
+  try { var raw = localStorage.getItem(KEY); if (raw) S = Object.assign({}, DEF, JSON.parse(raw)); } catch(e) {}
+  var root = document.documentElement;
+
+  function save(){ try { localStorage.setItem(KEY, JSON.stringify(S)); } catch(e) {} }
+  function lum(hex){
+    var c = hex.replace("#",""); var rgb = [0,2,4].map(function(i){ var v = parseInt(c.substr(i,2),16)/255; return v <= 0.03928 ? v/12.92 : Math.pow((v+0.055)/1.055,2.4); });
+    return 0.2126*rgb[0] + 0.7152*rgb[1] + 0.0722*rgb[2];
+  }
+  function ratio(a,b){ var l1 = lum(a), l2 = lum(b); return (Math.max(l1,l2)+0.05)/(Math.min(l1,l2)+0.05); }
+  var T = {
+    tr:{ok:"Kontrast oranı: ",good:" (okunurluk için yeterli)",bad:" (4,5:1 altında, metni okumak zorlaşabilir)",nospeech:"Bu tarayıcı sesli okumayı desteklemiyor.",stop:"Durdur",read:"Bu sayfayı oku",panel:"Profil ve menü",nav:"Bölümler",layers:"Katmanlar: beden, deri, ikinci deri (giysi ve teknoloji)"},
+    en:{ok:"Contrast ratio: ",good:" (enough for reading)",bad:" (below 4.5:1, text may be hard to read)",nospeech:"This browser does not support read aloud.",stop:"Stop",read:"Read this page",panel:"Profile and menu",nav:"Sections",layers:"Layers: body, skin, second skin (garment and technology)"}
+  };
+
+  function apply(){
+    root.dataset.ui = S.lang; root.lang = S.lang;
+    root.style.setProperty("--hs", S.hs); root.style.setProperty("--bs", S.bs);
+    root.style.setProperty("--lh", S.lh); root.style.setProperty("--ls", S.ls + "em"); root.style.setProperty("--ws", S.ws + "em");
+    var F = FONTS[S.font] || FONTS.jakarta; root.style.setProperty("--font", F[0]); root.style.setProperty("--font-h", F[1] || F[0]); root.style.setProperty("--font-m", F[2] || F[0]);
+    if (S.theme === "auto") delete root.dataset.theme; else root.dataset.theme = S.theme;
+    if (S.theme === "custom"){ root.style.setProperty("--fg", S.fg); root.style.setProperty("--bg", S.bg); root.style.colorScheme = lum(S.bg) < 0.2 ? "dark" : "light"; }
+    else { root.style.removeProperty("--fg"); root.style.removeProperty("--bg"); root.style.removeProperty("color-scheme"); }
+    root.dataset.cvd = S.cvd;
+    root.toggleAttribute("data-guide", S.guide);
+    root.toggleAttribute("data-links", S.links);
+    root.toggleAttribute("data-align", S.align);
+    root.toggleAttribute("data-cursor", S.cursor);
+    root.toggleAttribute("data-focus", S.focus);
+    root.toggleAttribute("data-motion", S.motion);
+    root.toggleAttribute("data-nosnap", !S.snap);
+
+    document.querySelectorAll("[data-k]").forEach(function(el){
+      var k = el.dataset.k;
+      if (el.type === "checkbox") el.checked = !!S[k]; else el.value = S[k];
+    });
+    document.querySelectorAll('input[name="theme"]').forEach(function(r){ r.checked = (r.value === S.theme); });
+    document.querySelectorAll('input[name="cvd"]').forEach(function(r){ r.checked = (r.value === S.cvd); });
+    document.querySelectorAll("[data-o]").forEach(function(o){
+      var k = o.dataset.o, v = S[k];
+      o.textContent = (k === "hs" || k === "bs") ? Math.round(v*100) + "%" : (k === "lh" ? Number(v).toFixed(2) : Number(v).toFixed(2) + "em");
+    });
+    document.querySelectorAll("[data-setlang]").forEach(function(b){ b.setAttribute("aria-pressed", String(b.dataset.setlang === S.lang)); });
+    var t = T[S.lang];
+    document.getElementById("side").setAttribute("aria-label", t.panel);
+    document.querySelector(".side nav").setAttribute("aria-label", t.nav);
+    
+    var c = document.getElementById("contrast");
+    if (S.theme === "custom"){ var r = ratio(S.fg, S.bg); c.textContent = t.ok + r.toFixed(1).replace(".", S.lang === "tr" ? "," : ".") + ":1" + (r >= 4.5 ? t.good : t.bad); }
+    else c.textContent = "";
+    save();
+  }
+
+  document.querySelectorAll("[data-k]").forEach(function(el){
+    el.addEventListener("input", function(){
+      var k = el.dataset.k;
+      if (el.type === "checkbox"){
+        S[k] = el.checked;
+        if (k === "dys"){
+          if (el.checked){ S.font = "lexend"; S.lh = 1.9; S.ls = 0.05; S.ws = 0.16; S.align = true; }
+          else { S.font = DEF.font; S.lh = DEF.lh; S.ls = DEF.ls; S.ws = DEF.ws; S.align = DEF.align; }
+        }
+      } else if (el.type === "range"){ S[k] = parseFloat(el.value); }
+      else if (el.type === "color"){ S[k] = el.value; S.theme = "custom"; }
+      else { S[k] = el.value; }
+      apply();
+    });
+  });
+  document.querySelectorAll('input[name="theme"]').forEach(function(r){ r.addEventListener("change", function(){ S.theme = r.value; apply(); }); });
+  document.querySelectorAll('input[name="cvd"]').forEach(function(r){ r.addEventListener("change", function(){ S.cvd = r.value; apply(); }); });
+  document.querySelectorAll("[data-setlang]").forEach(function(b){ b.addEventListener("click", function(){ S.lang = b.dataset.setlang; stopSpeak(); apply(); }); });
+  document.getElementById("reset").addEventListener("click", function(){ var l = S.lang; S = Object.assign({}, DEF, {lang:l}); apply(); });
+
+  /* panel */
+  var panel = document.getElementById("panel"), tab = document.getElementById("panelTab");
+  function openPanel(){ panel.classList.add("open"); panel.removeAttribute("inert"); tab.setAttribute("aria-expanded","true"); setTimeout(function(){ document.getElementById("panelClose").focus(); }, 30); }
+  function closePanel(){ panel.classList.remove("open"); panel.setAttribute("inert",""); tab.setAttribute("aria-expanded","false"); tab.focus(); }
+  tab.addEventListener("click", function(){ panel.classList.contains("open") ? closePanel() : openPanel(); });
+  document.getElementById("panelClose").addEventListener("click", closePanel);
+
+  /* mobile side drawer */
+  var side = document.getElementById("side"), openSide = document.getElementById("openSide");
+  var mq = window.matchMedia("(max-width:900px)");
+  function syncSide(){ if (mq.matches && !side.classList.contains("open")) side.setAttribute("inert",""); else side.removeAttribute("inert"); }
+  function showSide(){ side.classList.add("open"); side.removeAttribute("inert"); openSide.setAttribute("aria-expanded","true"); setTimeout(function(){ document.getElementById("closeSide").focus(); }, 30); }
+  function hideSide(){ side.classList.remove("open"); openSide.setAttribute("aria-expanded","false"); syncSide(); if (mq.matches) openSide.focus(); }
+  openSide.addEventListener("click", showSide);
+  document.getElementById("closeSide").addEventListener("click", hideSide);
+  if (mq.addEventListener) mq.addEventListener("change", syncSide);
+  syncSide();
+
+  document.addEventListener("keydown", function(e){
+    if (e.key === "Escape"){
+      if (panel.classList.contains("open")) closePanel();
+      else if (side.classList.contains("open")) hideSide();
+    }
+  });
+
+  /* sections and navigation */
+  var main = document.getElementById("main");
+  var pages = Array.prototype.slice.call(document.querySelectorAll(".page"));
+  var links = Array.prototype.slice.call(document.querySelectorAll("#navList a"));
+  var where = document.getElementById("where");
+  var current = pages[0].id;
+  function setActive(id){
+    current = id;
+    links.forEach(function(a){ if (a.getAttribute("href") === "#" + id) a.setAttribute("aria-current","true"); else a.removeAttribute("aria-current"); });
+    var act = links.find(function(l){ return l.getAttribute("href") === "#" + id; });
+    var g = act ? act.closest(".grp") : null;
+    document.querySelectorAll(".grp").forEach(function(x){ var o = (x === g); x.classList.toggle("open", o); x.querySelector("button").setAttribute("aria-expanded", String(o)); });
+    var n = pages.findIndex(function(p){ return p.id === id; }) + 1;
+    where.textContent = (g ? (S.lang === "tr" ? "Bölüm " : "Part ") + g.dataset.part + " / 3, " : "") + (S.lang === "tr" ? "sayfa " : "page ") + n + " / " + pages.length;
+    if (location.hash !== "#" + id){ try { history.replaceState(null, "", "#" + id); } catch(e) {} }
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){ if (en.isIntersecting) setActive(en.target.id); });
+  }, {root: main, threshold: 0, rootMargin: "-45% 0px -50% 0px"});
+  pages.forEach(function(p){ io.observe(p); });
+
+  function goTo(id, smooth){
+    var el = document.getElementById(id);
+    if (!el || !el.classList.contains("page")) return;
+    el.scrollIntoView({behavior: smooth && !S.motion ? "smooth" : "auto", block: "start"});
+    setActive(id);
+  }
+  links.forEach(function(a){
+    a.addEventListener("click", function(e){
+      e.preventDefault();
+      var id = a.getAttribute("href").slice(1);
+      goTo(id, true);
+      if (mq.matches) hideSide();
+      var h = document.getElementById(id).querySelector("h1,h2");
+      if (h){ h.setAttribute("tabindex","-1"); h.focus({preventScroll:true}); }
+    });
+  });
+  document.querySelectorAll(".grp > button").forEach(function(b){ b.addEventListener("click", function(){ var x = b.parentElement; var o = !x.classList.contains("open"); x.classList.toggle("open", o); b.setAttribute("aria-expanded", String(o)); }); });
+  window.addEventListener("hashchange", function(){ var id = location.hash.slice(1); if (id && id !== current) goTo(id, true); });
+
+  /* reading ruler */
+  var guide = document.getElementById("guide");
+  window.addEventListener("pointermove", function(e){
+    if (!S.guide) return;
+    guide.style.top = (e.clientY - guide.offsetHeight/2) + "px";
+  });
+
+  /* read aloud */
+  var speakBtn = document.getElementById("speak"), note = document.getElementById("speakNote");
+  function stopSpeak(){ if ("speechSynthesis" in window) speechSynthesis.cancel(); speakBtn.setAttribute("aria-pressed","false"); setSpeakLabel(false); }
+  function setSpeakLabel(on){ var t = T[S.lang]; speakBtn.querySelectorAll("span").forEach(function(s){ s.textContent = on ? T[s.lang].stop : T[s.lang].read; }); }
+  speakBtn.addEventListener("click", function(){
+    if (!("speechSynthesis" in window)){ note.textContent = T[S.lang].nospeech; return; }
+    if (speakBtn.getAttribute("aria-pressed") === "true"){ stopSpeak(); return; }
+    var text = document.getElementById(current).innerText;
+    var u = new SpeechSynthesisUtterance(text);
+    u.lang = S.lang === "tr" ? "tr-TR" : "en-GB";
+    var v = speechSynthesis.getVoices().find(function(x){ return x.lang && x.lang.toLowerCase().indexOf(S.lang) === 0; });
+    if (v) u.voice = v;
+    u.onend = function(){ speakBtn.setAttribute("aria-pressed","false"); setSpeakLabel(false); };
+    speechSynthesis.cancel(); speechSynthesis.speak(u);
+    speakBtn.setAttribute("aria-pressed","true"); setSpeakLabel(true);
+  });
+
+  apply();
+  var start = location.hash.slice(1);
+  if (start && document.getElementById(start)) requestAnimationFrame(function(){ goTo(start, false); });
+  else setActive(pages[0].id);
+})();
+</script>
+
+<script>
+(function(){
+  function loc(){ return document.documentElement.lang === "en" ? "en-GB" : "tr-TR"; }
+  var mainEl = document.getElementById("main"), pf = document.getElementById("progressFill");
+  if (mainEl && pf){ var upd = function(){ var mx = mainEl.scrollHeight - mainEl.clientHeight; pf.style.width = (mx > 0 ? mainEl.scrollTop / mx * 100 : 0) + "%"; }; mainEl.addEventListener("scroll", upd, {passive:true}); upd(); }
+  var start = Date.now(), perSec = 92000000 / (365 * 24 * 3600);
+  var el = document.getElementById("tex-counter");
+  if (el) setInterval(function(){ el.textContent = Math.round((Date.now() - start) / 1000 * perSec).toLocaleString(loc()); }, 250);
+  var ids = ["c-des","c-size","c-rev","c-m","c-pct"];
+  function calc(){
+    var v = ids.map(function(i){ return parseFloat(document.getElementById(i).value); });
+    ids.forEach(function(i, k){ var o = document.getElementById(i + "-o"); var u = document.getElementById(i).dataset.unit || ""; o.textContent = (u === "%" ? "%" + v[k] : v[k].toLocaleString(loc())); });
+    var total = v[0] * v[1] * v[2], saved = Math.round(total * v[4] / 100), fab = Math.round(saved * v[3]);
+    document.getElementById("c-total").textContent = total.toLocaleString(loc());
+    document.getElementById("c-saved").textContent = saved.toLocaleString(loc());
+    document.getElementById("c-fab").textContent = fab.toLocaleString(loc());
+  }
+  if (document.getElementById("c-des")){ ids.forEach(function(i){ document.getElementById(i).addEventListener("input", calc); }); calc();
+    new MutationObserver(calc).observe(document.documentElement, {attributes:true, attributeFilter:["lang"]}); }
+})();
+</script>
+</body>
+</html>
